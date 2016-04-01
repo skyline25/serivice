@@ -1,0 +1,6 @@
+.span-3 {
+  @include span-columns(3);
+}
+.span-6 {
+  @include span-columns(6);
+}

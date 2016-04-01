@@ -1,0 +1,6 @@
+.outer-container {
+  @include outer-container;
+  nav {
+    @include span-columns(3 of 12)
+  }
+}

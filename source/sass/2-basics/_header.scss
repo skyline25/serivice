@@ -1,0 +1,156 @@
+.header-all {
+  color: $text-color-default;
+
+  .header-top-side {
+    background-color: $background-color-gray;
+    height: $header-top-side-height;
+    font-size: $font-size-null;
+
+    .header-menu {
+      @include outer-container;
+
+      .header-menu-bar {
+        @include span-columns(8);
+
+        .header-button {
+          height: $header-top-side-height;
+          min-height: $header-top-side-height;
+          line-height: $line-height-xl;
+          font-size: $font-size-m;
+          color: $text-color-default;
+          display: inline-block;
+          padding-left: $header-button-padding-x;
+          padding-right: $header-button-padding-x;
+          transition: all $transition-time-fast ease;
+
+          &:hover {
+            background-color: $blue-hover;
+          }
+        }
+      }
+
+      .header-social-link-bar {
+        @include span-columns(4);
+        @include omega();
+        text-align: right;
+
+        .header-social-link {
+          height: $header-top-side-height;
+          width: $header-button-padding-x*1.5;
+          vertical-align: top;
+          background-image: url('../img/icons/icon_vk-.png');
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .header-bottom-side {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
+    padding: $header-bottom-side-height/8 0;
+
+    .header-info-bar {
+      @include outer-container;
+
+      .header-infocell {
+        @include span-columns(4);
+        height: $header-bottom-side-height/2;
+        line-height: $header-bottom-side-height/4;
+        vertical-align: middle;
+
+        &:first-child {
+          background-image: url('../img/logo/logo.png');
+          background-size: contain;
+          background-position: left;
+          background-repeat: no-repeat;
+        }
+        &:nth-child(2) {
+          text-align: center;
+
+          .header-infocell-num {
+            height: $header-bottom-side-height/4;
+            font-size: $font-size-m*2;
+            font-weight: $font-weight-bold;
+          }
+
+          .header-infocell-text {
+            display: inline-block;
+            font-size: $font-size-m;
+            color: $light-green;
+            height: $header-bottom-side-height/4;
+            position: relative;
+
+            &:before {
+              display: block;
+              content: '';
+              width: $header-icon-default-size/1.5;
+              height: $header-bottom-side-height/4;
+              background-image: url('../img/icons/used/icon_phone.png');
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+              position: absolute;
+              left: $header-bottom-side-height/4*-1;
+            }
+          }
+        }
+        &:last-child {
+          text-align: right;
+          font-size: $font-size-s;
+
+          .header-infocell-text-r {
+            height: $header-bottom-side-height/2;
+            display: inline-block;
+            text-align: left;
+            position: relative;
+
+            .header-infocell-text-time {
+              display: block;
+              color: $text-color-default;
+              vertical-align: top;
+              line-height: $header-bottom-side-height/2-$line-height-xs*2;
+
+              &:before {
+                display: block;
+                content: '';
+                width: $header-icon-default-size;
+                height: $header-icon-default-size;
+                background-image: url('../img/icons/used/icon_time.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: $header-icon-default-size*-1.5;
+              }
+            }
+
+            .header-infocell-text-adr {
+              display:block;
+              line-height: $line-height-xs;
+              color: $text-color-default;
+              vertical-align: bottom;
+
+              &:before {
+                display: block;
+                content: '';
+                width: $header-icon-default-size;
+                height: $header-icon-default-size;
+                background-image: url('../img/icons/used/icon_map.png');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                position: absolute;
+                left: $header-icon-default-size*-1.5;
+                bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

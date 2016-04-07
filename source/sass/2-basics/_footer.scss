@@ -1,6 +1,6 @@
 .footer-all {
-  background-color: $background-color-gray-footer;
-  font-size: $font-size-null;
+  background-color: $gray-footer-bg;
+  font-size: 0;
 
   .footer-outer-container {
     @include outer-container();
@@ -8,7 +8,6 @@
     .footer-top-cell-two,
     .footer-top-cell-three,
     .footer-top-cell-four {
-      /*@include span-columns(3 of 12);*/
       height: $footer-cell-height;
       margin-top: $footer-margin;
       margin-bottom: $footer-margin;
@@ -65,7 +64,7 @@
         .footer-text-info {
           font-size: $font-size-m;
           line-height: $line-height-s+8; /*отступ 4px от номера телефона*/
-          color: $light-green;
+          color: $aquamarine;
         }
       }
     }
@@ -80,20 +79,18 @@
       background-color: $white;
     }
     .footer-bottom-cell {
-      //height: $footer-bottom-side-height;
-      height: 32px;
+      height: $height-def;
       font-size: $font-small;
       font-weight: $font-weight-lite;
-      line-height: $footer-bottom-side-height;
-      color: #6a6a6a;
+      line-height: $height-def;
+      color: rgb(106, 106, 106); //color: #6a6a6a;
       display: flex;
       justify-content: space-between;
       .social-link {
-        width: $icon-height-def;
-        background-image: url('../img/icons/used/icon_vk-.png');
+        width: $width-def;
         background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+        background: url('../img/icons/used/icon_vk-.png') 100% 100% no-repeat;
+        background-position: center right;
       }
     }
   }

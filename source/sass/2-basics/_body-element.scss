@@ -9,7 +9,7 @@
     color: $white;
     font-size: $font-size-m;
     line-height: $font-size-m;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     transition: all $transition-time-fast ease;
     display: flex;
     align-items: center;
@@ -118,22 +118,6 @@
           line-height: 18px;
           margin-bottom: 24px;
         }
-        .test-3 {
-          display: block;
-          width: 170px;
-          height: 32px;
-          background-color: #40d47e;
-          border-radius: 3px;
-          box-shadow: 0 1px 4px rgba(64, 212, 126, 0.3);
-          color: white;
-          font-size: 16px;
-          line-height: 32px;
-          text-align: center;
-          vertical-align: middle;
-          &:hover {
-            background-color: $aquamarine-hover;
-          }
-        }
       }
     }
   }
@@ -164,7 +148,7 @@
   //Классы для имитации карусели окончание
 }
 .main-about {
-  background-color: whitesmoke;
+  background-color: $gray-main-bg;
   .main-outer-container-two {
     @include outer-container();
     padding-top: $padding-long;
@@ -172,16 +156,68 @@
 
     .main-two-cell-1,
     .main-two-cell-2 {
-      height: 592px;
+      height: 592px; //временная величина, удалить после определения вложения
+      background-color: $white;
+      padding-bottom: $padding;
+      //padding: 0 $padding-long $padding $padding-long;
+    }
+    .main-two-cell-1 {
+      &-promo-h,
+      &-promo,
+      &-btn {
+        @include size(100% $height-one-and-half);
+        padding: 0 $padding-long;
+        display: block;
+      }
+      &-promo-h {
+        color: $text-color-default;
+        font-size: $font-size-l;
+        line-height: $height-one-and-half;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        vertical-align: middle;
+        &-border {
+          border-bottom: 1px solid $gray-footer-bg;
+        }
+      }
+      &-promo {
+        transition: all $transition-time-fast ease;
+        font-size: $font-size-m;
+        line-height: $height-one-and-half;
+        vertical-align: middle;
+        color: $text-color-default;
 
-      border: 1px dashed blue;
+        &-border {
+          border-bottom: 1px solid $gray-footer-bg;
+          transition: all $transition-time-fast ease;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .main-two-cell-1-promo-price {
+            font-weight: $font-weight-bold;
+            color: $blue;
+          }
+        }
+        &:hover {
+          background-color: $gray-main-bg;
+          .main-two-cell-1-promo-border {
+            border-bottom: $gray-main-bg;
+          }
+        }
+      }
+      &-promo-btn {
+        padding-top: $padding;
+        display: flex;
+        justify-content: center;
+      }
     }
     .main-two-cell-3 {
       &-1,
       &-2 {
         height: 280px;
+        background-color: $white;
 
-        border: 1px dashed blue;
       }
       &-1 {
         margin-bottom: $margin-long;

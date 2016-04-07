@@ -1,0 +1,216 @@
+.main-outer-container-one {
+  @include outer-container();
+  padding-top: $padding;
+  .main-top-cell {
+    display: block;
+    height: $main-top-cell-height;
+    margin-top: $margin;
+    background-color: $blue;
+    color: $white;
+    font-size: $font-size-m;
+    line-height: $font-size-m;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    transition: all $transition-time-fast ease;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background-color: $blue-hover;
+    }
+    .main-icon-1,
+    .main-icon-2,
+    .main-icon-3,
+    .main-icon-4,
+    .main-icon-5,
+    .main-icon-6,
+    .main-icon-7,
+    .main-icon-8 {
+      height: $icon-big;
+      width: $main-icon-cell-width;
+      background-size: contain;
+      border-right: 1px solid white;
+    }
+    .main-icon-1 {
+      background: url('../img/icon/icon_workstation.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-2 {
+      background: url('../img/icon/icon_laptop.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-3 {
+      background: url('../img/icon/icon_tablet.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-4 {
+      background: url('../img/icon/icon_ebook.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-5 {
+      background: url('../img/icon/icon_apple-monitor.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-6 {
+      background: url('../img/icon/icon_cellphone.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-7 {
+      background: url('../img/icon/1.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-icon-8 {
+      background: url('../img/icon/icon_building.png') 100% 100% no-repeat;
+      background-position: center;
+    }
+    .main-top-text {
+      padding-left: $padding;
+    }
+  }
+  //Классы для имитации карусели начало
+  .main-carousel {
+    height: $main-carousel-height;
+    margin-top: $margin-long;
+    background-image: url('../img/images/1.jpg');
+    background-size: cover;
+    padding: 32px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .carousel-arrow {
+      width: 48px;
+      height: 47px;
+      background: url('../img/icon/icon_arrows.png') 100% 100% no-repeat;
+      background-position: center;
+      &:last-of-type {
+        transform: rotate(180deg);
+      }
+      &:hover{
+        opacity: 0.5;
+        background-color: #73aad1;
+      }
+    }
+
+    .main-carousel-container {
+      display: flex;
+      align-items: center;
+
+      .main-carousel-promo {
+        width: 470px;
+        height: 224px;
+        opacity: 0.9;
+        background-color: white;
+        border: 1px solid white;
+        padding: 32px;
+        margin-left: 32px;
+        .test-1 {
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 20px;
+          margin-bottom: 26px;
+        }
+        .test-2 {
+          height: 54px;
+          text-overflow: clip;
+          overflow: hidden;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 18px;
+          margin-bottom: 24px;
+        }
+        .test-3 {
+          display: block;
+          width: 170px;
+          height: 32px;
+          background-color: #40d47e;
+          border-radius: 3px;
+          box-shadow: 0 1px 4px rgba(64, 212, 126, 0.3);
+          color: white;
+          font-size: 16px;
+          line-height: 32px;
+          text-align: center;
+          vertical-align: middle;
+          &:hover {
+            background-color: $aquamarine-hover;
+          }
+        }
+      }
+    }
+  }
+  .main-carousel-bar {
+    height: $main-top-cell-height/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .trial-carousel {
+      width: 48px;
+      height: 16px;
+      margin-right: 13px;
+      background-color: #ebeff8;
+      transition: all $transition-time-fast ease;
+      &:first-child {
+        background-color: $blue;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover{
+        background-color: $blue;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+  //Классы для имитации карусели окончание
+}
+.main-about {
+  background-color: whitesmoke;
+  .main-outer-container-two {
+    @include outer-container();
+    padding-top: $padding-long;
+    padding-bottom: $padding-long;
+
+    .main-two-cell-1,
+    .main-two-cell-2 {
+      height: 592px;
+
+      border: 1px dashed blue;
+    }
+    .main-two-cell-3 {
+      &-1,
+      &-2 {
+        height: 280px;
+
+        border: 1px dashed blue;
+      }
+      &-1 {
+        margin-bottom: $margin-long;
+      }
+    }
+  }
+}
+.main-outer-container-three {
+  @include outer-container();
+  padding-top: $padding-long;
+  padding-bottom: $padding-long;
+
+  .main-three-cell-1,
+  .main-three-cell-2,
+  .main-three-cell-3 {
+    height: 276px;
+    border: 1px dashed blue;
+  }
+
+  .main-three-cell-4,
+  .main-three-cell-5 {
+    height: 15px;
+    margin-bottom: $margin-long;
+
+    border: 1px dashed blue;
+  }
+  .main-three-cell-6 {
+    height: 144px;
+
+    border: 1px dashed blue;
+  }
+}

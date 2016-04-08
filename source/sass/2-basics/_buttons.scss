@@ -16,3 +16,49 @@
     color: $white;
   }
 }
+.cross-link-blue {
+  color: rgb(102, 201, 224);
+  font-size: 14px;
+  line-height: 1em;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.social-link {
+  width: 1.5rem;
+  height: 0.875rem;
+  background-size: contain;
+  background: url('../img/icons/used/icon_vk-.png') 100% 100% no-repeat;
+  background-position: center right;
+//  border: 1px dashed black;
+}
+.carousel-arrow {
+  width: 3rem;
+  height: 3rem;
+  background: url('../img/icon/icon_arrows.png') 100% 100% no-repeat;
+  background-position: center;
+  &:last-of-type {
+    transform: rotate(180deg);
+  }
+  &:hover{
+    opacity: 0.5;
+    background-color: #73aad1;
+  }
+}
+.carousel-arrow-mini {
+  display: inline-block;
+  width: 2rem;
+  height: 3rem;
+  background: url('../img/icon/icon_arrows-mini.png') 100% 100% no-repeat;
+  background-position: center;
+  &:last-child {
+    transform: rotate(180deg);
+  }
+  &:hover{
+    //opacity: 0.5;
+    background-color: $gray-whitesmoke;
+  }
+}
+.blue-color{
+  color: $blue;
+}

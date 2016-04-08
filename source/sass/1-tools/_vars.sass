@@ -24,17 +24,19 @@ $maroon:  #85144B
 // Gray Scale
 $white:  #fff
 $silver: #ddd
-$gray:   #aaa
+//$gray:   #aaa
 $black:  #111
 
 // Work colors
-$text-color-default: #2f2f2f
-$footer-copyright-text-color: #6a6a6a
-$background-color-gray-footer: #e7e7e7
-$background-color-gray: #eceff1
-$header-menu-hover: #8bbfe4
-$blue-hover: #8bbfe4 //primary
-$blue: #73aad1 //primary
+$text-color-default: rgb(47, 47, 47) //#2f2f2f
+$gray-copyright: rgb(106, 106, 106) //#6a6a6a
+$gray-footer-bg: rgb(231, 231, 231) //#e7e7e7
+$gray-header-bg: rgb(236, 239, 241) //#eceff1
+$gray-main-bg: rgb(245,245,245) //whitesmoke
+$gray-whitesmoke: rgb(245,245,245) //whitesmoke
+
+$blue-hover:  rgb(139, 191, 228) //primary #8bbfe4
+$blue: rgb(115, 170, 209) //primary #73aad1
 
 $light-green: #40d47e
 $aquamarine: #40d47e //primary
@@ -42,6 +44,12 @@ $aquamarine-hover: lighten( $aquamarine, 10% )
 
 
 // Fonts
+html
+  font-size: 16px
+
+$font-def: 16px //primary
+
+
 $font-size-xxl: 36px
 $font-size-xl: 24px
 $font-size-l: 18px
@@ -59,12 +67,20 @@ $line-height-s: 16px
 $line-height-xs: 14px
 
 $font-weight-bold: 700
+$bold: 700
 $font-weight-normal: 400
 $font-weight-lite: 300
+$lite: 300
 
 
 // Size
 /*$header-height: 32px*/
+$height-one-and-half: 48px
+$height-def: 32px //primary
+$height-half: 16px //16px primary
+
+$width-def: 32px
+
 $header-top-side-height: 32px
 $footer-bottom-side-height: $header-top-side-height
 $header-bottom-side-height: 100px
@@ -98,6 +114,9 @@ $footer-line: 1px
 $footer-margin: 15px
 $footer-padding: $footer-margin
 $footer-top-cell-padding: $footer-cell-height/2-$line-height-m //def 7px
+
+//button-size
+$button-about-width: 170px
 
 
 //Time

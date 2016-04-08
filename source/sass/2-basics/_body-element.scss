@@ -1,8 +1,9 @@
 .main-outer-container-one {
+  color: $text-color-default;
   @include outer-container();
   padding-top: $padding;
   .main-top-cell {
-    display: block;
+    //display: block;
     height: $main-top-cell-height;
     margin-top: $margin;
     background-color: $blue;
@@ -78,16 +79,17 @@
     justify-content: space-between;
 
     .carousel-arrow {
-      width: 48px;
-      height: 47px;
+      width: 3rem;
+      height: 3rem;
       background: url('../img/icon/icon_arrows.png') 100% 100% no-repeat;
       background-position: center;
-      &:last-of-type {
-        transform: rotate(180deg);
+      &-right {
+        background: url('../img/icon/icon_arrows-right.png') 100% 100% no-repeat;
+        background-position: center;
       }
       &:hover{
         opacity: 0.5;
-        background-color: #73aad1;
+        background-color: $blue;
       }
     }
 
@@ -127,6 +129,7 @@
     justify-content: center;
     align-items: center;
     .trial-carousel {
+      display: block;
       width: 48px;
       height: 16px;
       margin-right: 13px;
@@ -154,25 +157,71 @@
     padding-top: $padding-long;
     padding-bottom: $padding-long;
 
+    //Вынесено из main-two-cell-2
+
+    .main-two-cell-2-h {
+      font-size: 1.125rem;
+      line-height: 3rem;
+      font-weight: $bold;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+    .main-two-cell-2-img {
+      //@include size(100% 68px);
+      @include size(100% 4rem);
+      background: url('../img/images/2.jpg') 100% 100% no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 1rem;
+
+    }
+    .main-two-cell-2-h2 {
+      font-size: 1rem;
+      //line-height: 1.125rem;
+      line-height: 1.25rem;
+      font-weight: $bold;
+      margin-bottom: 1rem;
+    }
+    .main-two-cell-2-text {
+      font-size: 0.875rem;
+      line-height: 1rem;
+      height: 3rem;
+      overflow: hidden;
+      text-overflow: clip;
+      margin-bottom: 1rem;
+    }
+    .main-two-cell-2-text-mini {
+      font-size: 0.75rem;
+      line-height: 1.125em;
+    }
+    .main-two-cell-2-bot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $margin;
+    }
+    .main-two-cell-2-date {
+      font-weight: $lite;
+    }
+    //Окончание
     .main-two-cell-1,
     .main-two-cell-2 {
-      height: 592px; //временная величина, удалить после определения вложения
+      //height: 592px; //временная величина, удалить после определения вложения
       background-color: $white;
-      padding-bottom: $padding;
-      //padding: 0 $padding-long $padding $padding-long;
+      padding-bottom: 1rem;
     }
     .main-two-cell-1 {
       &-promo-h,
       &-promo,
       &-btn {
         @include size(100% $height-one-and-half);
-        padding: 0 $padding-long;
+        padding: 0 2rem;
         display: block;
       }
       &-promo-h {
         color: $text-color-default;
-        font-size: $font-size-l;
-        line-height: $height-one-and-half;
+        font-size: 1.125rem;
+        line-height: 3rem;
         font-weight: $font-weight-bold;
         text-transform: uppercase;
         vertical-align: middle;
@@ -207,20 +256,148 @@
         }
       }
       &-promo-btn {
-        padding-top: $padding;
+        padding-top: 1rem;
         display: flex;
         justify-content: center;
       }
     }
+    .main-two-cell-2 {
+      padding: 0 2rem;
+      font-size: $font-size-s;
+      line-height: $line-height-s;
+      .main-two-cell-2-a/*,
+      .main-two-cell-2-b */{
+        padding-bottom: $padding-long;
+        //border: 1px dashed blue;
+      }
+//Выносим в общий класс для main-outer-container-two Начало
+      /*.main-two-cell-2-h {
+        font-size: $font-size-l;
+        line-height: $height-one-and-half;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        vertical-align: middle;
+      }
+      .main-two-cell-2-img {
+        @include size(100% 68px);
+        background: url('../img/images/2.jpg') 100% 100% no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-bottom: $margin;
+
+      }
+      .main-two-cell-2-h2 {
+        font-size: $font-size-m;
+        line-height: $line-height-m;
+        font-weight: $font-weight-bold;
+        margin-bottom: $margin;
+      }
+      .main-two-cell-2-text {
+        height: $height-one-and-half;
+        overflow: hidden;
+        text-overflow: clip;
+        margin-bottom: $margin;
+      }
+      .main-two-cell-2-bot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $margin;
+      }
+      .main-two-cell-2-date {
+        font-weight: $lite;
+      }*/
+//Окончание
+      .main-two-cell-2-b {
+        .main-two-cell-2-img {
+          //@include size(100% 68px);
+          @include size(100% 4rem);
+          background: url('../img/images/3.jpg') 100% 100% no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        .main-two-cell-2-btn {
+          margin-bottom: $margin;
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+    }
     .main-two-cell-3 {
       &-1,
       &-2 {
-        height: 280px;
+        padding: 0 $padding-long;
         background-color: $white;
-
+        .main-two-cell-2-bot {
+          margin-bottom: 0;
+          font-size: 0;
+        }
+        .main-two-cell-social {
+          //@include size(100% 68px);//согласно исправленной высоты изображения 64+4
+          display: flex;
+          justify-content: flex-start;
+          .main-two-cell-2-ava {
+            //@include size(68px 68px);
+            @include size(4rem 4rem);
+            background: url('../img/icon/avatar_boykodmitriy.png') 100% 100% no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          .main-two-cell-social-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-left: 1rem;
+            .main-two-cell-2-h2 {
+              margin: 0;
+            }
+            .social-link {
+              margin-right: 1rem;
+            }
+          }
+        }
+        .main-two-cell-2-text {
+          margin-top: 1rem;
+          margin-bottom: 0;
+          height: 6rem;
+        }
       }
       &-1 {
         margin-bottom: $margin-long;
+      }
+      &-2 {
+        .main-two-cell-2-h {
+          line-height: 1.5rem;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          //+3
+        }
+        .input-class {
+          @include size(100% 3rem);
+          border: 1px solid $blue-hover;
+          padding-left: 4rem;
+          background: url('../img/icon/icon_man.png') 1rem 1rem no-repeat;
+          background-position: center;
+          background-position-x: 1rem;
+          margin-bottom: 1rem;
+          &:last-child {
+            background: url('../img/icon/icon_phone_bottom.png') 1rem 1rem no-repeat;
+            background-position: center;
+            background-position-x: 1rem;
+          }
+        }
+        .main-two-cell-2-text-mini {
+          //line-height: 1.125em;
+          line-height: 1.375em; // подгон макета под первые 2 колонки
+          padding-bottom: 1rem;
+        }
+        .main-two-cell-2-btn {
+          padding-bottom: 1rem;
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }

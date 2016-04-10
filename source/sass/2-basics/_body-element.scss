@@ -1,11 +1,11 @@
 .main-outer-container-one {
   color: $text-color-default;
   @include outer-container();
-  padding-top: $padding;
+  padding-top: 1rem;
   .main-top-cell {
     //display: block;
     height: $main-top-cell-height;
-    margin-top: $margin;
+    margin-top: 1rem;
     background-color: $blue;
     color: $white;
     font-size: $font-size-m;
@@ -73,25 +73,9 @@
     background-image: url('../img/images/1.jpg');
     background-size: cover;
     padding: 32px 18px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    .carousel-arrow {
-      width: 3rem;
-      height: 3rem;
-      background: url('../img/icon/icon_arrows.png') 100% 100% no-repeat;
-      background-position: center;
-      &-right {
-        background: url('../img/icon/icon_arrows-right.png') 100% 100% no-repeat;
-        background-position: center;
-      }
-      &:hover{
-        opacity: 0.5;
-        background-color: $blue;
-      }
-    }
 
     .main-carousel-container {
       display: flex;
@@ -533,16 +517,62 @@
       background-position-x: 0.5rem;//подгонка узких иконок
     }
   }
-  .main-three-cell-4,
-  .main-three-cell-5 {
-    height: 1rem;
-    margin-bottom: 2rem;
-
-    border: 1px dashed blue;
-  }
   .main-three-cell-6 {
-    height: 144px;
-
-    border: 1px dashed blue;
+    height: 9rem;//временное значение
+    padding: 1rem 2rem;
+    .text-h1 {
+      line-height: 2rem;
+    }
+    .test-07,
+    .carousel-brand {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .element-1,
+      .element-2,
+      .element-3,
+      .element-4,
+      .element-5,
+      .element-6 {
+        font-size: 1.125rem;
+        display: inline-block;
+        height: 5rem;
+        width: 8rem;
+        padding-top: 3.875rem;
+        //line-height: 5rem;
+        vertical-align: bottom;
+        text-align: center;
+        margin-right: 3rem;
+        background: url('../img/icon/brand/lenovo.png') 100% 100% no-repeat;
+        background-size: contain;
+        background-position: center top;
+      }
+      .element-2 {
+        background: url('../img/icon/brand/msi.png') 100% 100% no-repeat;
+        background-size: contain;
+        background-position: center top;
+      }
+      .element-3 {
+        background: url('../img/icon/brand/samsung_.png') 100% 100% no-repeat;
+        background-size: contain;
+        background-position: center top;
+      }
+      .element-4 {
+        background: url('../img/icon/brand/acer.png') 100% 100% no-repeat;
+        background-size: contain;
+        background-position: center top;
+      }
+      .element-5 {
+        background: url('../img/icon/brand/asus.png') 100% 100% no-repeat;
+        background-size: contain;
+        background-position: center top;
+      }
+      .element-6 {
+        background: url('../img/icon/brand/hp.png') 100% 100% no-repeat;
+        background-size: contain;
+        background-position: center top;
+        margin-right: 0;
+      }
+    }
   }
 }

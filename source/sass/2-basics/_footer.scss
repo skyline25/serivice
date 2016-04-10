@@ -57,6 +57,7 @@
         flex-direction: column;
         align-items: flex-end;
         .footer-text-phone {
+          color: $text-color-default;
           font-size: $font-size-xl;
           line-height: $line-height-s;
           padding-top: $footer-top-cell-padding;

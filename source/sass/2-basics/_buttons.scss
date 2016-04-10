@@ -33,16 +33,18 @@
 //  border: 1px dashed black;
 }
 .carousel-arrow {
+  display: block;
   width: 3rem;
   height: 3rem;
   background: url('../img/icon/icon_arrows.png') 100% 100% no-repeat;
   background-position: center;
-  &:last-of-type {
-    transform: rotate(180deg);
+  &:last-child {
+    background: url('../img/icon/icon_arrows-right.png') 100% 100% no-repeat;
+    background-position: center;
   }
   &:hover{
     opacity: 0.5;
-    background-color: #73aad1;
+    background-color: $blue;
   }
 }
 .carousel-arrow-mini {
@@ -55,10 +57,6 @@
     transform: rotate(180deg);
   }
   &:hover{
-    //opacity: 0.5;
     background-color: $gray-whitesmoke;
   }
-}
-.blue-color{
-  color: $blue;
 }

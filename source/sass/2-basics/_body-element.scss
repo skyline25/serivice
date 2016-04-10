@@ -365,14 +365,13 @@
         }
       }
       &-1 {
-        margin-bottom: $margin-long;
+        margin-bottom: 2rem;
       }
       &-2 {
         .main-two-cell-2-h {
           line-height: 1.5rem;
           padding-top: 1rem;
           padding-bottom: 1rem;
-          //+3
         }
         .input-class {
           @include size(100% 3rem);
@@ -389,7 +388,6 @@
           }
         }
         .main-two-cell-2-text-mini {
-          //line-height: 1.125em;
           line-height: 1.375em; // подгон макета под первые 2 колонки
           padding-bottom: 1rem;
         }
@@ -404,20 +402,141 @@
 }
 .main-outer-container-three {
   @include outer-container();
-  padding-top: $padding-long;
-  padding-bottom: $padding-long;
-
-  .main-three-cell-1,
-  .main-three-cell-2,
-  .main-three-cell-3 {
-    height: 276px;
-    border: 1px dashed blue;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  .main-three-cell-1 {
+    padding-bottom: 1.5rem;
+    .text-h1 {
+      padding-bottom: 1rem;
+      line-height: 2rem;
+      vertical-align: middle;
+    }
+    .cell-1 {
+      @include size(100% 4rem);
+      margin-bottom: 1rem;
+      padding-right: 2rem;
+    }
+    .cell-2,
+    .cell-3,
+    .cell-4 {
+      @include size(100% 2rem);
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+      background: url('../img/icon/icon_check.png') 100% 100% no-repeat;
+      background-position: center left;
+    }
+    .cell-4 {
+      @include size(100% 3rem);
+    }
+    .cell-5 {
+      margin-bottom: 1rem;
+      .cross-link-blue {
+        line-height: 1rem;
+      }
+    }
   }
-
+  .main-three-cell-2 {
+    padding-bottom: 1.5rem;
+    .text-h1 {
+      line-height: 2rem;
+      vertical-align: middle;
+      //vertical-align: bottom;
+      padding-bottom: 0.5rem;
+      //border: 1px solid black;
+    }
+    .cell-11,
+    .cell-12,
+    .cell-13,
+    .cell-14,
+    .cell-15 {
+      display: block;
+      line-height: 2rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 3rem;
+      vertical-align: middle;
+      color: $text-color-default;
+      background: url('../img/icon/mini/icon_workstation-.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;
+      &:hover {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      }
+    }
+    .cell-12 {
+      background: url('../img/icon/mini/icon_monoblock.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;
+    }
+    .cell-13 {
+      background: url('../img/icon/mini/icon_laptop-.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;
+    }
+    .cell-14 {
+      background: url('../img/icon/mini/icon_tablet-.png') 100% 100% no-repeat;
+      background-position: center left;
+      background-position-x: 0.75rem;//подгонка узких иконок
+    }
+    .cell-15 {
+      background: url('../img/icon/mini/icon_ebook-.png') 100% 100% no-repeat;
+      background-position: center left;
+      background-position-x: 0.875rem;//подгонка узких иконок
+      margin-bottom: 0.5rem;
+    }
+    .cell-16 {
+      //padding-top: 1rem;
+      .cross-link-blue {
+        line-height: 1rem;
+      }
+    }
+  }
+  .main-three-cell-3 {
+    padding-top: 2.5rem;
+    .cell-17,
+    .cell-18,
+    .cell-19,
+    .cell-20,
+    .cell-21 {
+      display: block;
+      line-height: 2rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      padding-left: 3rem;
+      vertical-align: middle;
+      color: $text-color-default;
+      background: url('../img/icon/mini/icon_apple-monitor-.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;
+      &:hover {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      }
+    }
+    .cell-18 {
+      background: url('../img/icon/mini/icon_cellphone-.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.875rem;//подгонка узких иконок
+    }
+    .cell-19 {
+      background: url('../img/icon/mini/icon_monitor.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;
+    }
+    .cell-20 {
+      background: url('../img/icon/mini/1.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;//подгонка узких иконок
+    }
+    .cell-21 {
+      background: url('../img/icon/mini/icon_building-.png') 100% 100% no-repeat;
+      background-position: center;
+      background-position-x: 0.5rem;//подгонка узких иконок
+    }
+  }
   .main-three-cell-4,
   .main-three-cell-5 {
-    height: 15px;
-    margin-bottom: $margin-long;
+    height: 1rem;
+    margin-bottom: 2rem;
 
     border: 1px dashed blue;
   }

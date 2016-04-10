@@ -19,3 +19,47 @@
 .box-shadow {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
+
+.text-img {
+  @include size(100% 4rem);
+  background: url('../img/images/2.jpg') 100% 100% no-repeat;
+  background-position: center;
+  background-size: cover;
+  //margin-bottom: 1rem;
+
+}
+.text-h1 {
+  font-size: 1.125rem;
+  //line-height: 3rem;
+  font-weight: $bold;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+.text-h2 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: $bold;
+  //margin-bottom: 1rem;
+}
+.text-s {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  overflow: hidden;
+  text-overflow: clip;
+  //margin-bottom: 1rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1.125em;
+}
+.text-date {
+  font-weight: $lite;
+  font-size: 0.75rem;
+  line-height: 1.125em;
+}
+.text-justify {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   //margin-bottom: 1rem;
+ }

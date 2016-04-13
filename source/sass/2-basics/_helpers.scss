@@ -22,6 +22,9 @@
 .box-shadow {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
+.box-shadow-header {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
 
 .text-img {
   @include size(100% 4rem);
@@ -29,24 +32,29 @@
   background-position: center;
   background-size: cover;
 }
-.text-h1 {
+.text-h1,
+.block-h1{
+  color: $text;
   font-size: 1.125rem;
   font-weight: $bold;
   text-transform: uppercase;
   vertical-align: middle;
 }
-.text-h2 {
+.text-h2,
+.block-h2{
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: $bold;
 }
-.text-s {
+.text-s,
+.text-block-14{
   font-size: 0.875rem;
   line-height: 1rem;
   overflow: hidden;
   text-overflow: clip;
 }
-.text-xs {
+.text-xs,
+.text-block-12{
   font-size: 0.75rem;
   line-height: 1.125em;
 }
@@ -55,8 +63,15 @@
   font-size: 0.75rem;
   line-height: 1.125em;
 }
-.text-justify {
+.text-justify,//замениить на .justify
+.justify {
    display: flex;
    justify-content: space-between;
    align-items: center;
  }
+
+/*.justify-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}*/

@@ -1,99 +1,68 @@
 .footer-all {
   background-color: $gray-footer-bg;
+  color: $text;
   font-size: 0;
-
+  .footer-contacts {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 2.75rem;
+    background: url('../img/icons/used/icon_map_bottom.png') left 5px center no-repeat;
+  }
   .footer-outer-container {
     @include outer-container();
-    .footer-top-cell-one,
-    .footer-top-cell-two,
-    .footer-top-cell-three,
-    .footer-top-cell-four {
-      height: $footer-cell-height;
-      margin-top: $footer-margin;
-      margin-bottom: $footer-margin;
+    .footer-top-cell-1,
+    .footer-top-cell-2,
+    .footer-top-cell-3,
+    .footer-top-cell-4 {
+      @include span-columns(3);
+      height: $logo;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.125rem;
       display: flex;
-    }
-    .footer-top-cell-one {
-      background-image: url('../img/logo/logo.png');
-      background-size: contain;
-      background-position: left;
-      background-repeat: no-repeat;
-    }
-    .footer-top-cell-two {
+      flex-direction: column;
       justify-content: center;
-      .footer-icon-one {
-        justify-content: center;
-        height: $footer-cell-height;
-        width: $footer-icon-place;
-        background-image: url('../img/icons/used/icon_map_bottom.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+      align-items: center;
+
+    }
+    .footer-top-cell-1 {
+      background: url('../img/logo/logo.png') left no-repeat;
+    }
+    .footer-top-cell-3 {
+      .footer-contacts {
+        background: url('../img/icons/used/icon_time_bottom.png') left center no-repeat;
       }
     }
-    .footer-top-cell-three {
-      justify-content: center;
-      .footer-icon-two {
-        height: $footer-cell-height;
-        width: $footer-icon;
-        background-image: url('../img/icons/used/icon_time_bottom.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-    .footer-top-cell-four {
-      justify-content: flex-end;
-      .footer-icon-three {
-        height: $footer-cell-height;
-        width: $footer-icon;
-        background-image: url('../img/icons/used/icon_phone_bottom.png');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-      .footer-top-address {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        .footer-text-phone {
-          color: $text-color-default;
-          font-size: $font-size-xl;
-          line-height: $line-height-s;
-          padding-top: $footer-top-cell-padding;
+    .footer-top-cell-4 {
+      @include omega();
+      align-items: flex-end;
+      .footer-contacts {
+        background: url('../img/icons/used/icon_phone_bottom.png') left center no-repeat;
+        text-align: right;
+        &-phone {
+          color: $text; //edge
+          font-size: 1.5rem;
+          line-height: 1.5rem;
         }
-        .footer-text-info {
-          font-size: $font-size-m;
-          line-height: $line-height-s+8; /*отступ 4px от номера телефона*/
+        &-info {
           color: $aquamarine;
+          font-size: 1rem;
+          line-height: 1rem;
         }
       }
-    }
-    .footer-text {
-      font-size: $font-size-m;
-      line-height: $line-height-m;
-      padding-top: $footer-top-cell-padding;
-      padding-left: $footer-padding;
     }
     .footer-middle-line {
-      height: $footer-line;
+      height: 1px;
       background-color: $white;
     }
     .footer-bottom-cell {
-      height: $height-def;
-      font-size: $font-small;
-      font-weight: $font-weight-lite;
-      line-height: $height-def;
-      color: rgb(106, 106, 106); //color: #6a6a6a;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      .social-link {
-        width: $width-def;
-        background-size: contain;
-        background: url('../img/icons/used/icon_vk-.png') 100% 100% no-repeat;
-        background-position: center right;
-      }
+      height: 2rem;
+      font-size: 0.75rem;
+      font-weight: $lite;
+      line-height: 2rem;
+      color: $gray-copyright; //color: #6a6a6a;
     }
   }
 }

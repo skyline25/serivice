@@ -1,81 +1,98 @@
-.main-outer-container-one {
-  color: $text-color-default;
-  @include outer-container();
+$pc: new-breakpoint(max-width 1280px 12);
+$tablet: new-breakpoint(max-width 768px 10);
+$mobile: new-breakpoint(max-width 480px 4);
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+
+
+.main-container-1 {
+  color: $text;
+  font-size: 0;
   padding-top: 1rem;
-  .main-top-cell {
-    //display: block;
-    height: $main-top-cell-height;
+
+  $tmp: 1;
+  $span-var: 3;
+  $omega-var: 4n;
+
+  @include outer-container();
+  @include media($pc) {
+    //$tmp: 2;
+    //$span-var: 4;
+    //$omega-var: 3n;
+  }
+  @include media($tablet) {
+    //$tmp: 3;
+    //$span-columns: 5;
+    //$omega-var: 2n;
+  }
+  @if $tablet ==  10 {
+      $span-columns: 5;
+      $omega-var: 2n;
+  } @else if $tmp == 2 {
+      $span-var: 4;
+      $omega-var: 3n;
+  } @else {
+      $span-var: 3;
+      $omega-var: 4n;
+  }
+
+  .main-container-1-cell {
+    @include span-columns($span-var);
+    @include omega($omega-var);
+
+    height: 4rem;
     margin-top: 1rem;
     background-color: $blue;
     color: $white;
-    font-size: $font-size-m;
-    line-height: $font-size-m;
-    //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    transition: all $transition-time-fast ease;
+    font-size: 1rem;
+    line-height: 1rem;
+    transition: all $fast ease;
+
     display: flex;
     align-items: center;
+
     &:hover {
       background-color: $blue-hover;
     }
-    .main-icon-1,
-    .main-icon-2,
-    .main-icon-3,
-    .main-icon-4,
-    .main-icon-5,
-    .main-icon-6,
-    .main-icon-7,
-    .main-icon-8 {
-      height: $icon-big;
-      width: $main-icon-cell-width;
-      background-size: contain;
-      border-right: 1px solid white;
-    }
-    .main-icon-1 {
-      background: url('../img/icon/icon_workstation.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-2 {
-      background: url('../img/icon/icon_laptop.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-3 {
-      background: url('../img/icon/icon_tablet.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-4 {
-      background: url('../img/icon/icon_ebook.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-5 {
-      background: url('../img/icon/icon_apple-monitor.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-6 {
-      background: url('../img/icon/icon_cellphone.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-7 {
-      background: url('../img/icon/1.png') 100% 100% no-repeat;
-      background-position: center;
-    }
-    .main-icon-8 {
-      background: url('../img/icon/icon_building.png') 100% 100% no-repeat;
-      background-position: center;
-    }
+
     .main-top-text {
-      padding-left: $padding;
+      padding-left: 1rem;
+    }
+
+    .justify-mc-1 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @for $i from 1 through 8 {
+      .main-icon-#{$i} {
+        height: 3rem;
+        width: 5rem;
+        border-right: 1px solid white;
+        background: url('../img/icon/mc-1/0#{$i}.png') center no-repeat;
+      }
     }
   }
   //Классы для имитации карусели начало
   .main-carousel {
-    height: $main-carousel-height;
-    margin-top: $margin-long;
+    @include span-columns(12);
+    @include omega();
+
+    margin-top: 2rem;
     background-image: url('../img/images/1.jpg');
     background-size: cover;
-    padding: 32px 18px;
+    padding: 2rem 1.125rem;
+
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     .main-carousel-container {
       display: flex;
@@ -87,38 +104,41 @@
         opacity: 0.9;
         background-color: white;
         border: 1px solid white;
-        padding: 32px;
-        margin-left: 32px;
-        .test-1 {
-          font-size: 24px;
-          font-weight: 700;
+        padding: 2rem;
+        margin-left: 2rem;
+        .main-carousel-promo-1 {
+          font-size: 1.5rem;
+          font-weight: $bold;
           line-height: 20px;
           margin-bottom: 26px;
         }
-        .test-2 {
+        .main-carousel-promo-2 {
           height: 54px;
           text-overflow: clip;
           overflow: hidden;
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: 400;
           line-height: 18px;
-          margin-bottom: 24px;
+          margin-bottom: 26px;
         }
       }
     }
   }
   .main-carousel-bar {
-    height: $main-top-cell-height/2;
+    @include span-columns(12);
+    @include omega();
+
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     .trial-carousel {
       display: block;
-      width: 48px;
-      height: 16px;
+      width: 3rem;
+      height: 1rem;
       margin-right: 13px;
       background-color: #ebeff8;
-      transition: all $transition-time-fast ease;
+      transition: all $fast ease;
       &:first-child {
         background-color: $blue;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
@@ -134,225 +154,159 @@
   }
   //Классы для имитации карусели окончание
 }
-.main-about {
-  background-color: $gray-main-bg;
-  .main-outer-container-two {
+.main-gray-container {
+  background-color: $whitesmoke;
+
+  .main-container-2 {
     @include outer-container();
-    padding-top: $padding-long;
-    padding-bottom: $padding-long;
-
-    //Вынесено из main-two-cell-2
-
-    .main-two-cell-2-h {
-      font-size: 1.125rem;
-      line-height: 3rem;
-      font-weight: $bold;
-      text-transform: uppercase;
-      vertical-align: middle;
-    }
-    .main-two-cell-2-img {
-      //@include size(100% 68px);
-      @include size(100% 4rem);
-      background: url('../img/images/2.jpg') 100% 100% no-repeat;
-      background-position: center;
-      background-size: cover;
-      margin-bottom: 1rem;
-
-    }
-    .main-two-cell-2-h2 {
-      font-size: 1rem;
-      //line-height: 1.125rem;
-      line-height: 1.25rem;
-      font-weight: $bold;
-      margin-bottom: 1rem;
-    }
-    .main-two-cell-2-text {
-      font-size: 0.875rem;
-      line-height: 1rem;
-      height: 3rem;
-      overflow: hidden;
-      text-overflow: clip;
-      margin-bottom: 1rem;
-    }
-    .main-two-cell-2-text-mini {
-      font-size: 0.75rem;
-      line-height: 1.125em;
-    }
-    .main-two-cell-2-bot {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: $margin;
-    }
-    .main-two-cell-2-date {
-      font-weight: $lite;
-    }
-    //Окончание
-    .main-two-cell-1,
-    .main-two-cell-2 {
-      //height: 592px; //временная величина, удалить после определения вложения
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    .mc2-block-1 {
+      @include span-columns(4);
       background-color: $white;
-      padding-bottom: 1rem;
-    }
-    .main-two-cell-1 {
-      &-promo-h,
+
+      .block-h1,
       &-promo,
       &-btn {
-        @include size(100% $height-one-and-half);
+        @include size(100% 3rem);
         padding: 0 2rem;
         display: block;
       }
-      &-promo-h {
-        color: $text-color-default;
-        font-size: 1.125rem;
+      .block-h1 {
         line-height: 3rem;
-        font-weight: $font-weight-bold;
-        text-transform: uppercase;
-        vertical-align: middle;
         &-border {
           border-bottom: 1px solid $gray-footer-bg;
         }
       }
       &-promo {
-        transition: all $transition-time-fast ease;
-        font-size: $font-size-m;
-        line-height: $height-one-and-half;
-        vertical-align: middle;
-        color: $text-color-default;
+        transition: all $fast ease;
+        font-size: 1rem;
+        line-height: 3rem;
+        color: $text;
 
         &-border {
           border-bottom: 1px solid $gray-footer-bg;
-          transition: all $transition-time-fast ease;
+          transition: all $fast ease;
           display: flex;
           justify-content: space-between;
           align-items: center;
-
-          .main-two-cell-1-promo-price {
-            font-weight: $font-weight-bold;
-            color: $blue;
-          }
         }
+
+        &-price {
+          font-weight: $bold;
+          color: $blue;
+        }
+
         &:hover {
-          background-color: $gray-main-bg;
-          .main-two-cell-1-promo-border {
-            border-bottom: $gray-main-bg;
+          background-color: $whitesmoke;
+          .mc2-block-1-promo-border {
+            border-bottom: $whitesmoke;
           }
         }
       }
       &-promo-btn {
         padding-top: 1rem;
+        padding-bottom: 1rem;
         display: flex;
         justify-content: center;
       }
     }
-    .main-two-cell-2 {
+    .mc2-block-2 {
+      @include span-columns(4);
+      background-color: $white;
       padding: 0 2rem;
-      font-size: $font-size-s;
-      line-height: $line-height-s;
-      .main-two-cell-2-a/*,
-      .main-two-cell-2-b */{
-        padding-bottom: $padding-long;
-        //border: 1px dashed blue;
-      }
-//Выносим в общий класс для main-outer-container-two Начало
-      /*.main-two-cell-2-h {
-        font-size: $font-size-l;
-        line-height: $height-one-and-half;
-        font-weight: $font-weight-bold;
-        text-transform: uppercase;
-        vertical-align: middle;
-      }
-      .main-two-cell-2-img {
-        @include size(100% 68px);
-        background: url('../img/images/2.jpg') 100% 100% no-repeat;
-        background-position: center;
-        background-size: cover;
-        margin-bottom: $margin;
+      font-size: 0.875rem;
+      line-height: 1rem;
 
+      .mc2-block-2-a{
+        padding-bottom: 2rem;
       }
-      .main-two-cell-2-h2 {
-        font-size: $font-size-m;
-        line-height: $line-height-m;
-        font-weight: $font-weight-bold;
-        margin-bottom: $margin;
+
+      .block-h1 {
+        line-height: 3rem;
       }
-      .main-two-cell-2-text {
-        height: $height-one-and-half;
-        overflow: hidden;
-        text-overflow: clip;
-        margin-bottom: $margin;
+      .text-block-14 {
+        height: 3rem;
       }
-      .main-two-cell-2-bot {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: $margin;
+      .block-h2,
+      .text-block-14,
+      .justify{
+        margin-bottom: 1rem;
       }
-      .main-two-cell-2-date {
+
+      .mc2-block-2-img {
+        @include size(100% 4rem);
+        background: url('../img/images/2.jpg') center no-repeat;
+        background-size: cover;
+        margin-bottom: 1rem;
+      }
+
+      .mc2-block-2-date {
         font-weight: $lite;
-      }*/
-//Окончание
-      .main-two-cell-2-b {
-        .main-two-cell-2-img {
-          //@include size(100% 68px);
+      }
+
+      .mc2-block-2-b {
+        .mc2-block-2-img {
           @include size(100% 4rem);
-          background: url('../img/images/3.jpg') 100% 100% no-repeat;
-          background-position: center;
+          background: url('../img/images/3.jpg') center no-repeat;
           background-size: cover;
         }
-        .main-two-cell-2-btn {
-          margin-bottom: $margin;
+        .mc2-block-2-btn {
+          margin-bottom: 1rem;
           display: flex;
           justify-content: center;
         }
       }
-
     }
-    .main-two-cell-3 {
-      &-1,
-      &-2 {
-        padding: 0 $padding-long;
+    .mc2-block-3 {
+      @include span-columns(4);
+      @include omega();
+
+      &-1{
+        padding: 0 2rem;
         background-color: $white;
-        .main-two-cell-2-bot {
-          margin-bottom: 0;
-          font-size: 0;
+        margin-bottom: 2rem;
+
+        .block-h1 {
+          line-height: 3rem;
         }
-        .main-two-cell-social {
-          //@include size(100% 68px);//согласно исправленной высоты изображения 64+4
+        .text-block-14 {
+          height: 6rem;
+        }
+        .mc2-block-3-social {
           display: flex;
           justify-content: flex-start;
-          .main-two-cell-2-ava {
-            //@include size(68px 68px);
+          margin-bottom: 1rem;
+
+          .mc2-block-3-ava {
             @include size(4rem 4rem);
-            background: url('../img/icon/avatar_boykodmitriy.png') 100% 100% no-repeat;
-            background-position: center;
+            background: url('../img/icon/avatar_boykodmitriy.png') center no-repeat;
             background-size: contain;
           }
-          .main-two-cell-social-info {
+          .mc2-block-3-social-info {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
             padding-left: 1rem;
-            .main-two-cell-2-h2 {
-              margin: 0;
+            .text-block-14 {
+              height: 1rem;
+            }
+            .justify {
+              align-items: flex-end;
             }
             .social-link {
+              height: 1rem;
               margin-right: 1rem;
             }
           }
         }
-        .main-two-cell-2-text {
-          margin-top: 1rem;
-          margin-bottom: 0;
-          height: 6rem;
-        }
       }
-      &-1 {
-        margin-bottom: 2rem;
-      }
+
       &-2 {
-        .main-two-cell-2-h {
+        padding: 0 2rem;
+        background-color: $white;
+        .block-h1 {
           line-height: 1.5rem;
           padding-top: 1rem;
           padding-bottom: 1rem;
@@ -371,11 +325,10 @@
             background-position-x: 1rem;
           }
         }
-        .main-two-cell-2-text-mini {
-          line-height: 1.375em; // подгон макета под первые 2 колонки
+        .text-block-12 {
           padding-bottom: 1rem;
         }
-        .main-two-cell-2-btn {
+        .mc2-block-2-btn {
           padding-bottom: 1rem;
           display: flex;
           justify-content: center;
@@ -384,16 +337,46 @@
     }
   }
 }
-.main-outer-container-three {
+.main-triangle-container {
   @include outer-container();
-  padding-top: 2rem;
+  .triangle {
+    @include span-columns(12);
+    @include omega();
+    //border: 1px dashed blue;
+    //height: 1rem;
+    display: flex;
+    justify-content: center;
+    &-left {
+      @include size(1rem);
+      border: 1rem solid transparent;
+      border-bottom-color: $white;
+      border-left-width: 0;
+      border-top-width: 0;
+      border-right-color: $whitesmoke;
+    }
+    &-right {
+      @include size(1rem);
+      border: 1rem solid transparent;
+      border-bottom-color: $white;
+      border-right-width: 0;
+      border-top-width: 0;
+      border-left-color: $whitesmoke;
+    }
+  }
+}
+
+.main-container-3 {
+  @include outer-container();
+  padding-top: 1rem;
   padding-bottom: 2rem;
-  .main-three-cell-1 {
+
+
+  .mc3-block-1 {
+    @include span-columns(6);
     padding-bottom: 1.5rem;
-    .text-h1 {
+    .block-h1 {
       padding-bottom: 1rem;
       line-height: 2rem;
-      vertical-align: middle;
     }
     .cell-1 {
       @include size(100% 4rem);
@@ -406,8 +389,8 @@
       @include size(100% 2rem);
       padding-left: 2rem;
       margin-bottom: 1rem;
-      background: url('../img/icon/icon_check.png') 100% 100% no-repeat;
-      background-position: center left;
+      background: url('../img/icon/icon_check.png') center left no-repeat;
+      //background-position: center left;
     }
     .cell-4 {
       @include size(100% 3rem);
@@ -419,14 +402,13 @@
       }
     }
   }
-  .main-three-cell-2 {
+  .mc3-block-2 {
+    @include span-columns(3);
     padding-bottom: 1.5rem;
     .text-h1 {
       line-height: 2rem;
       vertical-align: middle;
-      //vertical-align: bottom;
       padding-bottom: 0.5rem;
-      //border: 1px solid black;
     }
     .cell-11,
     .cell-12,
@@ -439,7 +421,7 @@
       padding-bottom: 0.5rem;
       padding-left: 3rem;
       vertical-align: middle;
-      color: $text-color-default;
+      color: $text;
       background: url('../img/icon/mini/icon_workstation-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;
@@ -448,23 +430,19 @@
       }
     }
     .cell-12 {
-      background: url('../img/icon/mini/icon_monoblock.png') 100% 100% no-repeat;
-      background-position: center;
+      background: url('../img/icon/mini/icon_monoblock.png') center no-repeat;
       background-position-x: 0.5rem;
     }
     .cell-13 {
-      background: url('../img/icon/mini/icon_laptop-.png') 100% 100% no-repeat;
-      background-position: center;
+      background: url('../img/icon/mini/icon_laptop-.png') center no-repeat;
       background-position-x: 0.5rem;
     }
     .cell-14 {
-      background: url('../img/icon/mini/icon_tablet-.png') 100% 100% no-repeat;
-      background-position: center left;
+      background: url('../img/icon/mini/icon_tablet-.png') center left no-repeat;
       background-position-x: 0.75rem;//подгонка узких иконок
     }
     .cell-15 {
-      background: url('../img/icon/mini/icon_ebook-.png') 100% 100% no-repeat;
-      background-position: center left;
+      background: url('../img/icon/mini/icon_ebook-.png') center left no-repeat;
       background-position-x: 0.875rem;//подгонка узких иконок
       margin-bottom: 0.5rem;
     }
@@ -475,7 +453,10 @@
       }
     }
   }
-  .main-three-cell-3 {
+  .mc3-block-3 {
+    @include span-columns(3);
+    @include omega();
+
     padding-top: 2.5rem;
     .cell-17,
     .cell-18,
@@ -488,7 +469,7 @@
       padding-bottom: 0.5rem;
       padding-left: 3rem;
       vertical-align: middle;
-      color: $text-color-default;
+      color: $text;
       background: url('../img/icon/mini/icon_apple-monitor-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;
@@ -517,62 +498,74 @@
       background-position-x: 0.5rem;//подгонка узких иконок
     }
   }
-  .main-three-cell-6 {
-    height: 9rem;//временное значение
+  .mc3-block-4 {
+    @include span-columns(12);
+    @include omega();
+    //height: 9rem;//временное значение
     padding: 1rem 2rem;
-    .text-h1 {
+    .block-h1 {
       line-height: 2rem;
     }
-    .test-07,
     .carousel-brand {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      .element-1,
-      .element-2,
-      .element-3,
-      .element-4,
-      .element-5,
-      .element-6 {
-        font-size: 1.125rem;
-        display: inline-block;
-        height: 5rem;
-        width: 8rem;
-        padding-top: 3.875rem;
-        //line-height: 5rem;
-        vertical-align: bottom;
-        text-align: center;
-        margin-right: 3rem;
-        background: url('../img/icon/brand/lenovo.png') 100% 100% no-repeat;
-        background-size: contain;
-        background-position: center top;
-      }
-      .element-2 {
-        background: url('../img/icon/brand/msi.png') 100% 100% no-repeat;
-        background-size: contain;
-        background-position: center top;
-      }
-      .element-3 {
-        background: url('../img/icon/brand/samsung_.png') 100% 100% no-repeat;
-        background-size: contain;
-        background-position: center top;
-      }
-      .element-4 {
-        background: url('../img/icon/brand/acer.png') 100% 100% no-repeat;
-        background-size: contain;
-        background-position: center top;
-      }
-      .element-5 {
-        background: url('../img/icon/brand/asus.png') 100% 100% no-repeat;
-        background-size: contain;
-        background-position: center top;
-      }
-      .element-6 {
-        background: url('../img/icon/brand/hp.png') 100% 100% no-repeat;
-        background-size: contain;
-        background-position: center top;
-        margin-right: 0;
+      $i: 1;
+      @for $i from 1 through 6 {
+        .element-#{$i} {
+          font-size: 1.125rem;
+          display: inline-block;
+          height: 5rem;
+          width: 8rem;
+          padding-top: 3.875rem;
+          vertical-align: bottom;
+          text-align: center;
+          margin-right: 3rem;
+          background: url('../img/icon/brand/0#{$i}.png') center top no-repeat;
+          background-size: contain;
+        }
+        .element-6 {
+          margin-right: 0;
+        }
       }
     }
   }
+}/*
+.test-mc-4 {
+  $test: new-breakpoint(max-width 800px 10);
+  $test-480: new-breakpoint(max-width 480px 4);
+
+  @include outer-container();
+  .test-sc-1 {
+    @include span-columns(4);
+    @include media($test) {
+      @include span-columns(5);
+    }
+    @include media($test-480) {
+      @include span-columns(4);
+      @include omega();
+    }
+    margin-top: 1rem;
+    height: 3rem;
+    border: 1px dashed blue;
+  }
+  .test-sc-2 {
+    @include span-columns(4);
+    @include shift(4);
+    @include omega();
+    @include media($test) {
+      @include span-columns(5);
+      @include shift(0);
+      @include omega();
+    }
+    @include media($test-480) {
+      @include span-columns(4);
+      @include omega();
+    }
+    margin-top: 1rem;
+    height: 3rem;
+    border: 1px dashed blue;
+  }
+
 }
+*/

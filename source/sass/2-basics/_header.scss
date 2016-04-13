@@ -1,157 +1,140 @@
+$pc: new-breakpoint(max-width 1280px 12);
+$tablet: new-breakpoint(max-width 768px 10);
+$mobile: new-breakpoint(max-width 480px 4);
+
 .header-all {
-  color: $text-color-default;
+  color: $text;
 
   .header-top-side {
+    min-width: $width-min;
     background-color: $gray-header-bg;
-    height: $header-top-side-height;
-    font-size: $font-size-null;
-
+    height: 2rem;
+    font-size: 0;
     .header-menu {
       @include outer-container;
 
       .header-menu-bar {
-        @include span-columns(8);
-
+        @include span-columns(12);
+        @include omega();
+        @include media($pc) {
+          @include span-columns(12);
+          @include omega();
+        }
+        @include media($tablet) {
+          @include span-columns(10);
+          @include omega();
+          .header-button {
+            font-size: 0.875rem;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+          }
+        }
         .header-button {
-          height: $header-top-side-height;
-          min-height: $header-top-side-height;
-          line-height: $line-height-xl;
-          font-size: $font-size-m;
-          color: $text-color-default;
+          min-height: 2rem;
+          line-height: 2rem;
+          font-size: 1rem;
+          color: $text;
           display: inline-block;
-          padding-left: $header-button-padding-x;
-          padding-right: $header-button-padding-x;
-          transition: all $transition-time-fast ease;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          transition: all $fast ease;
 
           &:hover {
             background-color: $blue-hover;
           }
         }
       }
-
-      .header-social-link-bar {
-        @include span-columns(4);
-        @include omega();
-        text-align: right;
-
-        .header-social-link {
-          height: $header-top-side-height;
-          width: $header-button-padding-x*1.5;
-          vertical-align: top;
-          background-image: url('../img/icons/icon_vk-.png');
-          background-size: contain;
-          background-position: center;
-          background-repeat: no-repeat;
-
-          display: inline-block;
-        }
-      }
     }
   }
 
   .header-bottom-side {
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.5);
-    padding: $header-bottom-side-height/8 0;
+    padding: 1rem 0;
+    @include outer-container();
 
-    .header-info-bar {
-      @include outer-container;
+    .header-infocell-left {
+      @include span-columns(4);
+      @include media($tablet) {
+        @include span-columns(10);
+        @include omega();
+        margin-bottom: 1rem;
+      }
+      height: $logo;
+      line-height: 1.5rem;
+      background: url('../img/logo/logo.png') center no-repeat;
+    }
+    .header-infocell-center {
+      height: $logo;
+      text-align: center;
+      @include span-columns(4);
+      @include media($tablet) {
+        @include span-columns(5);
+        text-align: left;
+      }
+      .justify-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-infocell-1 {
+        color: $text; //ie edge
+        line-height: 2rem;
+        font-size: 2rem;
+        font-weight: $bold;
+      }
 
-      .header-infocell {
+      .header-infocell-2 {
+        display: inline-block;
+        color: $aquamarine;
+        font-size: 1rem;
+        line-height: 1rem;
+        padding-left: 1.5rem;
+        background: url('../img/icons/used/icon_phone.png') left no-repeat;
+      }
+    }
+      .header-infocell-right {
+        height: $logo;
+        text-align: right;
+        font-size: 0.875rem;
+
         @include span-columns(4);
-        height: $header-bottom-side-height/2;
-        line-height: $header-bottom-side-height/4;
-        vertical-align: middle;
-
-        &:first-child {
-          background-image: url('../img/logo/logo.png');
-          background-size: contain;
-          background-position: left;
-          background-repeat: no-repeat;
-        }
-        &:nth-child(2) {
-          text-align: center;
-
-          .header-infocell-num {
-            color: $text-color-default; //ie edge
-            height: $header-bottom-side-height/4;
-            font-size: $font-size-m*2;
-            font-weight: $font-weight-bold;
-          }
-
-          .header-infocell-text {
-            display: inline-block;
-            font-size: $font-size-m;
-            color: $light-green;
-            height: $header-bottom-side-height/4;
-            position: relative;
-
-            &:before {
-              display: block;
-              content: '';
-              width: $header-icon-default-size/1.5;
-              height: $header-bottom-side-height/4;
-              background-image: url('../img/icons/used/icon_phone.png');
-              background-size: contain;
-              background-position: center;
-              background-repeat: no-repeat;
-              position: absolute;
-              left: $header-bottom-side-height/4*-1;
-            }
+        @include omega();
+        @include media($tablet) {
+          @include span-columns(5);
+          @include omega();
+          .justify-header {
+            justify-content: center;
           }
         }
-        &:last-child {
-          text-align: right;
-          font-size: $font-size-s;
+        .justify-header {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        .header-infocell-contacts {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          text-align: left;
 
-          .header-infocell-text-r {
-            height: $header-bottom-side-height/2;
+          .header-infocell-3 {
             display: inline-block;
-            text-align: left;
-            position: relative;
+            color: $text;
+            line-height: 1.5rem;
+            padding-left: 2.5rem;
+            background: url('../img/icons/used/icon_time.png') left no-repeat;
+          }
 
-            .header-infocell-text-time {
-              display: block;
-              color: $text-color-default;
-              vertical-align: top;
-              line-height: $header-bottom-side-height/2-$line-height-xs*2;
-
-              &:before {
-                display: block;
-                content: '';
-                width: $header-icon-default-size;
-                height: $header-icon-default-size;
-                background-image: url('../img/icons/used/icon_time.png');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                position: absolute;
-                left: $header-icon-default-size*-1.5;
-              }
-            }
-
-            .header-infocell-text-adr {
-              display:block;
-              line-height: $line-height-xs;
-              color: $text-color-default;
-              vertical-align: bottom;
-
-              &:before {
-                display: block;
-                content: '';
-                width: $header-icon-default-size;
-                height: $header-icon-default-size;
-                background-image: url('../img/icons/used/icon_map.png');
-                background-size: contain;
-                background-position: center;
-                background-repeat: no-repeat;
-                position: absolute;
-                left: $header-icon-default-size*-1.5;
-                bottom: 0;
-              }
-            }
+          .header-infocell-4 {
+            display: inline-block;
+            color: $text;
+            line-height: 0.8125rem; //($logo-1.5rem)/2
+            padding-left: 2.5rem;
+            background: url('../img/icons/used/icon_map.png') left no-repeat;
           }
         }
       }
-    }
+
   }
 }

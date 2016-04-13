@@ -1,16 +1,16 @@
 .button-about {
   display: block;
-  width: $button-about-width;
-  height: $height-def;
+  width: 170px;
+  height: 2rem;
   background-color: $aquamarine;
   border-radius: 3px; //design value
   box-shadow: 0 1px 4px rgba(64, 212, 126, 0.3); //design value
   color: white;
-  font-size: $font-def;
-  line-height: $height-def;
+  font-size: 1rem;
+  line-height: 2rem;
   text-align: center;
   vertical-align: middle;
-  transition: all $transition-time-fast ease;
+  transition: all $fast ease;
   &:hover {
     background-color: $aquamarine-hover;
     color: $white;
@@ -25,22 +25,17 @@
   }
 }
 .social-link {
-  width: 1.5rem;
-  height: 0.875rem;
-  background-size: contain;
-  background: url('../img/icons/used/icon_vk-.png') 100% 100% no-repeat;
-  background-position: center right;
-//  border: 1px dashed black;
+  @include size(1.5rem);
+  background: url('../img/icons/used/icon_vk-.png') center no-repeat;
 }
+
 .carousel-arrow {
-  display: block;
+  display: inline-block;
   width: 3rem;
   height: 3rem;
-  background: url('../img/icon/icon_arrows.png') 100% 100% no-repeat;
-  background-position: center;
+  background: url('../img/icon/icon_arrows.png') center no-repeat;
   &:last-child {
-    background: url('../img/icon/icon_arrows-right.png') 100% 100% no-repeat;
-    background-position: center;
+    background: url('../img/icon/icon_arrows-right.png') center no-repeat;
   }
   &:hover{
     opacity: 0.5;
@@ -51,12 +46,11 @@
   display: inline-block;
   width: 2rem;
   height: 3rem;
-  background: url('../img/icon/icon_arrows-mini.png') 100% 100% no-repeat;
-  background-position: center;
+  background: url('../img/icon/icon_arrows-mini.png') center no-repeat;
   &:last-child {
     transform: rotate(180deg);
   }
   &:hover{
-    background-color: $gray-whitesmoke;
+    background-color: $whitesmoke;
   }
 }

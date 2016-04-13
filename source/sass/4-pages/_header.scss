@@ -1,0 +1,234 @@
+$pc: new-breakpoint(max-width 1280px 12);
+$header-unbreakable: new-breakpoint(max-width 1024px 12);
+$tablet: new-breakpoint(max-width 768px 10);
+$mobile: new-breakpoint(max-width 480px 4);
+.justify {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.center {
+  justify-content: center;
+}
+.start {
+  justify-content: flex-start;
+}
+.end {
+  justify-content: flex-end;
+}
+.column {
+  flex-direction: column;
+}
+
+
+.header-all {
+  color: $text;
+
+  .header-top-side {
+    min-width: $width-min;
+    background-color: $gray-header-bg;
+    padding: 0 2rem;
+    height: 2rem;
+    font-size: 0;
+    .header-menu {
+      @include outer-container;
+
+      .header-menu-bar {
+        @include span-columns(12);
+        @include omega();
+        @include media($pc) {
+          @include span-columns(12);
+          @include omega();
+        }
+        @include media($tablet) {
+          @include span-columns(10);
+          @include omega();
+          .header-button {
+            font-size: 0.875rem;
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+          }
+        }
+        .header-button {
+          min-height: 2rem;
+          line-height: 2rem;
+          font-size: 1rem;
+          color: $text;
+          display: inline-block;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          transition: all $fast ease;
+
+          &:hover {
+            background-color: $blue-hover;
+          }
+        }
+      }
+    }
+  }
+  .header-bottom-side {
+    padding: 1rem 0;
+    @include outer-container();
+
+    .header-infocell {
+      @include span-columns(4);
+
+      @include omega(3n);
+      @include media($header-unbreakable) {
+        @include span-columns(6);
+        @include omega-reset(3n);
+        @include omega(5-2n);
+      }
+      @include media($mobile) {
+        @include span-columns(8);
+        @include omega-reset(5-2n);
+        @include omega(n);
+      }
+
+      height: $logo;
+      line-height: 1.5rem;
+
+      .h-logo {
+        @include size(17rem 3.125rem);
+        background: url('../img/logo/logo.png') center no-repeat;
+      }
+      .h-phone {
+        color: $text; //ie edge
+        line-height: 2rem;
+        font-size: 2rem;
+        font-weight: $bold;
+      }
+      .h-service {
+        display: inline-block;
+        color: $aquamarine;
+        font-size: 1rem;
+        line-height: 1rem;
+        padding-left: 1.5rem;
+        background: url('../img/icons/used/icon_phone.png') left no-repeat;
+      }
+      .h-cell-3,
+      .h-cell-4 {
+        display: inline-block;
+        text-align: right;
+        font-size: 0.875rem;
+        color: $text;
+        padding-left: 2.5rem;
+        line-height: 1.5rem;
+        background: url('../img/icons/used/icon_time.png') left no-repeat;
+      }
+      .h-cell-4 {
+        line-height: 0.8125rem; //($logo-1.5rem)/2
+        background: url('../img/icons/used/icon_map.png') left no-repeat;
+      }
+    }
+  }
+}
+
+/*  .header-bottom-side {
+    padding: 1rem 0;
+    @include outer-container();
+
+    .header-infocell-left {
+      @include span-columns(4);
+
+      @include media($header-unbreakable) {
+        @include span-columns(5);
+        //@include omega();
+        //margin-bottom: 1rem;
+      }
+      @include media($tablet) {
+        @include span-columns(10);
+        @include omega();
+        margin-bottom: 1rem;
+      }
+      height: $logo;
+      line-height: 1.5rem;
+      background: url('../img/logo/logo.png') center no-repeat;
+    }
+    .header-infocell-center {
+      height: $logo;
+      text-align: center;
+      @include span-columns(4);
+
+      @include media($header-unbreakable) {
+        @include span-columns(4);
+        //@include omega();
+        //margin-bottom: 1rem;
+      }
+      @include media($tablet) {
+        @include span-columns(5);
+        text-align: left;
+      }
+      .justify-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-infocell-1 {
+        color: $text; //ie edge
+        line-height: 2rem;
+        font-size: 2rem;
+        font-weight: $bold;
+      }
+
+      .header-infocell-2 {
+        display: inline-block;
+        color: $aquamarine;
+        font-size: 1rem;
+        line-height: 1rem;
+        padding-left: 1.5rem;
+        background: url('../img/icons/used/icon_phone.png') left no-repeat;
+      }
+    }
+      .header-infocell-right {
+        height: $logo;
+        text-align: right;
+        font-size: 0.875rem;
+
+        @include span-columns(4);
+        @include omega();
+
+        @include media($header-unbreakable) {
+          @include span-columns(3);
+          @include omega();
+          //margin-bottom: 1rem;
+        }
+        @include media($tablet) {
+          @include span-columns(5);
+          @include omega();
+          .justify-header {
+            justify-content: center;
+          }
+        }
+        .justify-header {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+        .header-infocell-contacts {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          text-align: left;
+
+          .header-infocell-3 {
+            display: inline-block;
+            color: $text;
+            line-height: 1.5rem;
+            padding-left: 2.5rem;
+            background: url('../img/icons/used/icon_time.png') left no-repeat;
+          }
+
+          .header-infocell-4 {
+            display: inline-block;
+            color: $text;
+            line-height: 0.8125rem; //($logo-1.5rem)/2
+            padding-left: 2.5rem;
+            background: url('../img/icons/used/icon_map.png') left no-repeat;
+          }
+        }
+      }
+
+  }*/

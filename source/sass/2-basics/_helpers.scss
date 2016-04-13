@@ -1,3 +1,13 @@
+$nth: 1;
+@mixin omega-reset($nth, $context: null) {
+  @if $context == null {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  } @else {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter($context); }
+  }
+  &:nth-child(#{$nth}+1) { clear: none; }
+}
+
 .outer-container {
   @include outer-container;
 }
@@ -56,12 +66,13 @@
 .text-xs,
 .text-block-12{
   font-size: 0.75rem;
-  line-height: 1.125em;
+  //line-height: 1.125em;
+  line-height: 1rem;
 }
 .text-date {
   font-weight: $lite;
-  font-size: 0.75rem;
-  line-height: 1.125em;
+  font-size: 0.875rem;
+  line-height: 1rem;
 }
 .text-justify,//замениить на .justify
 .justify {
@@ -80,4 +91,13 @@
 }
 .column {
   flex-direction: column;
+}
+.i-start {
+  align-items: flex-start;
+}
+.i-end {
+  align-items: flex-end;
+}
+.i-wrap {
+  flex-wrap: nowrap;
 }

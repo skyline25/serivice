@@ -1,33 +1,28 @@
 $pc: new-breakpoint(max-width 1280px 12);
 $header-unbreakable: new-breakpoint(max-width 1024px 12);
 $tablet: new-breakpoint(max-width 768px 10);
+$h-phone-unbreakable: new-breakpoint(max-width 512px 4);
 $mobile: new-breakpoint(max-width 480px 4);
-.justify {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+$nth: 1;
+@mixin omega-reset($nth, $context: null) {
+  @if $context == null {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  } @else {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter($context); }
+  }
+  &:nth-child(#{$nth}+1) { clear: none; }
 }
-.center {
-  justify-content: center;
-}
-.start {
-  justify-content: flex-start;
-}
-.end {
-  justify-content: flex-end;
-}
-.column {
-  flex-direction: column;
-}
-
 
 .header-all {
   color: $text;
-
+  min-width: $uncompressed;
   .header-top-side {
-    min-width: $width-min;
     background-color: $gray-header-bg;
     padding: 0 2rem;
+    @include media($tablet) {
+      //padding: 0 0.5rem;
+      padding: 0;
+    }
     height: 2rem;
     font-size: 0;
     .header-menu {
@@ -67,22 +62,46 @@ $mobile: new-breakpoint(max-width 480px 4);
     }
   }
   .header-bottom-side {
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     @include outer-container();
 
+    @include media($tablet) {
+      padding: 1rem 0.5rem;
+    }
     .header-infocell {
       @include span-columns(4);
-
       @include omega(3n);
       @include media($header-unbreakable) {
-        @include span-columns(6);
-        @include omega-reset(3n);
-        @include omega(5-2n);
+        &:first-child {
+          @include span-columns(12);
+          @include omega(12);
+          .start {
+            justify-content: center;
+          }
+          margin-bottom: 1rem;
+        }
+        &:nth-child(2) {
+          @include span-columns(6);
+        }
+        &:last-child {
+          @include span-columns(6);
+          @include omega();
+          .end {
+            justify-content: center;
+          }
+        }
       }
+
+      @include media($h-phone-unbreakable) {
+        .h-phone {
+          font-size: 1.85rem;
+        }
+      }
+
       @include media($mobile) {
         @include span-columns(8);
-        @include omega-reset(5-2n);
-        @include omega(n);
+        @include omega-reset(12);
+        @include omega(8);
       }
 
       height: $logo;
@@ -109,7 +128,7 @@ $mobile: new-breakpoint(max-width 480px 4);
       .h-cell-3,
       .h-cell-4 {
         display: inline-block;
-        text-align: right;
+        text-align: left;
         font-size: 0.875rem;
         color: $text;
         padding-left: 2.5rem;
@@ -124,55 +143,119 @@ $mobile: new-breakpoint(max-width 480px 4);
   }
 }
 
-/*  .header-bottom-side {
-    padding: 1rem 0;
-    @include outer-container();
+//Ниже альтернаьтивный вариант, централизированное задание контрольных точек.
+//Не работает вложение по изменению шрифтов.
 
-    .header-infocell-left {
-      @include span-columns(4);
-
-      @include media($header-unbreakable) {
-        @include span-columns(5);
-        //@include omega();
-        //margin-bottom: 1rem;
-      }
-      @include media($tablet) {
+/*.header-all {
+  @include media($header-unbreakable) {
+     .header-infocell:first-child {
+       @include span-columns(12);
+       @include omega(12);
+       .start {
+         justify-content: center;
+       }
+       margin-bottom: 1rem;
+     }
+     .header-infocell:nth-child(2) {
+       @include span-columns(6);
+     }
+     .header-infocell:last-child {
+       @include span-columns(6);
+       @include omega();
+       .end {
+         justify-content: center;
+       }
+     }
+   }
+  @include media($tablet) {
+    .header-top-side {
+      padding: 0;
+      .header-menu-bar {
         @include span-columns(10);
         @include omega();
-        margin-bottom: 1rem;
+        .header-button {
+          font-size: 0.875rem;
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+        }
       }
+    }
+  }
+  @include media($h-phone-unbreakable) {
+    .h-phone {
+      font-size: 1.85rem;
+    }
+  }
+
+@include media($mobile) {
+  .header-infocell {
+    @include span-columns(8);
+    @include omega-reset(12);
+    @include omega(8);
+  }
+}
+
+  color: $text;
+  min-width: $uncompressed;
+  .header-top-side {
+    //min-width: $uncompressed;
+    background-color: $gray-header-bg;
+    padding: 0 2rem;
+
+    height: 2rem;
+    font-size: 0;
+    .header-menu {
+      @include outer-container;
+
+      .header-menu-bar {
+        @include span-columns(12);
+        @include omega();
+        @include media($pc) {
+          @include span-columns(12);
+          @include omega();
+        }
+
+        .header-button {
+          min-height: 2rem;
+          line-height: 2rem;
+          font-size: 1rem;
+          color: $text;
+          display: inline-block;
+          padding-left: 1rem;
+          padding-right: 1rem;
+          transition: all $fast ease;
+
+          &:hover {
+            background-color: $blue-hover;
+          }
+        }
+      }
+    }
+  }
+  .header-bottom-side {
+
+    @include outer-container();
+    //min-width: $uncompressed;
+    padding: 1rem 2rem;
+
+    .header-infocell {
+      @include span-columns(4);
+      @include omega(3n);
+
       height: $logo;
       line-height: 1.5rem;
-      background: url('../img/logo/logo.png') center no-repeat;
-    }
-    .header-infocell-center {
-      height: $logo;
-      text-align: center;
-      @include span-columns(4);
 
-      @include media($header-unbreakable) {
-        @include span-columns(4);
-        //@include omega();
-        //margin-bottom: 1rem;
+      .h-logo {
+        @include size(17rem 3.125rem);
+        background: url('../img/logo/logo.png') center no-repeat;
       }
-      @include media($tablet) {
-        @include span-columns(5);
-        text-align: left;
-      }
-      .justify-header {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .header-infocell-1 {
+      .h-phone {
         color: $text; //ie edge
         line-height: 2rem;
         font-size: 2rem;
         font-weight: $bold;
       }
-
-      .header-infocell-2 {
+      .h-service {
         display: inline-block;
         color: $aquamarine;
         font-size: 1rem;
@@ -180,55 +263,21 @@ $mobile: new-breakpoint(max-width 480px 4);
         padding-left: 1.5rem;
         background: url('../img/icons/used/icon_phone.png') left no-repeat;
       }
-    }
-      .header-infocell-right {
-        height: $logo;
-        text-align: right;
+      .h-cell-3,
+      .h-cell-4 {
+        display: inline-block;
+        text-align: left;
         font-size: 0.875rem;
-
-        @include span-columns(4);
-        @include omega();
-
-        @include media($header-unbreakable) {
-          @include span-columns(3);
-          @include omega();
-          //margin-bottom: 1rem;
-        }
-        @include media($tablet) {
-          @include span-columns(5);
-          @include omega();
-          .justify-header {
-            justify-content: center;
-          }
-        }
-        .justify-header {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-        }
-        .header-infocell-contacts {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: flex-start;
-          text-align: left;
-
-          .header-infocell-3 {
-            display: inline-block;
-            color: $text;
-            line-height: 1.5rem;
-            padding-left: 2.5rem;
-            background: url('../img/icons/used/icon_time.png') left no-repeat;
-          }
-
-          .header-infocell-4 {
-            display: inline-block;
-            color: $text;
-            line-height: 0.8125rem; //($logo-1.5rem)/2
-            padding-left: 2.5rem;
-            background: url('../img/icons/used/icon_map.png') left no-repeat;
-          }
-        }
+        color: $text;
+        padding-left: 2.5rem;
+        line-height: 1.5rem;
+        background: url('../img/icons/used/icon_time.png') left no-repeat;
       }
-
-  }*/
+      .h-cell-4 {
+        line-height: 0.8125rem; //($logo-1.5rem)/2
+        background: url('../img/icons/used/icon_map.png') left no-repeat;
+      }
+    }
+  }
+}
+*/

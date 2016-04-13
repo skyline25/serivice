@@ -2,6 +2,7 @@
   background-color: $gray-footer-bg;
   color: $text;
   font-size: 0;
+  min-width: $uncompressed;
   .footer-contacts {
     display: inline-block;
     text-align: left;
@@ -10,34 +11,126 @@
     background: url('../img/icons/used/icon_map_bottom.png') left 5px center no-repeat;
   }
   .footer-outer-container {
+    min-width: $uncompressed;
     @include outer-container();
+    padding: 0 2rem;
+    @include media($pc){
+      .footer-top-cell-1 {
+        @include span-columns(12);
+        @include omega();
+        background-position: center;
+      }
+      .footer-top-cell-2 {
+        @include span-columns(4);
+        .i-end {
+          align-items: flex-start;
+        }
+      }
+      .footer-top-cell-3 {
+        @include span-columns(4);
+        .i-end {
+          align-items: center;
+        }
+      }
+      .footer-top-cell-4 {
+        @include span-columns(4);
+        @include omega();
+        .i-end {
+          align-items: flex-end;
+        }
+      }
+    }
+    @include media($mc2-unbr){
+      .footer-top-cell-1 {
+        @include span-columns(5);
+        @include omega-reset(1n);
+        background-position: left;
+      }
+      .footer-top-cell-2 {
+        @include span-columns(5);
+        @include omega();
+        .i-end {
+          align-items: flex-end;
+        }
+      }
+      .footer-top-cell-3 {
+        @include span-columns(5);
+        .i-end {
+          align-items: flex-start;
+        }
+      }
+      .footer-top-cell-4 {
+        @include span-columns(5);
+        @include omega();
+      }
+    }
+    @include media($tablet) {
+      padding: 0 0.5rem;
+    }
+    @include media($footer-unbr) {
+      .footer-top-cell-1 {
+        @include span-columns(4);
+        @include omega();
+        background-position: center;
+      }
+      .footer-top-cell-2 {
+        @include span-columns(4);
+        @include omega();
+        .i-end {
+          align-items: center;
+        }
+      }
+      .footer-top-cell-3 {
+        @include span-columns(4);
+        @include omega();
+        .i-end {
+          align-items: center;
+        }
+      }
+      .footer-top-cell-4 {
+        @include span-columns(4);
+        @include omega();
+        .i-end {
+          align-items: center;
+        }
+      }
+     }
     .footer-top-cell-1,
     .footer-top-cell-2,
     .footer-top-cell-3,
     .footer-top-cell-4 {
-      @include span-columns(3);
+      //@include span-columns(3);
       height: $logo;
       margin-top: 1rem;
       margin-bottom: 1rem;
       font-size: 1rem;
       line-height: 1.125rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
+      .justify {
+        height: $logo;
+      }
     }
+
+    //.footer-contacts {
+      //display: inline-block;
+      //border: 1px dashed blue;
+    //}
     .footer-top-cell-1 {
+      @include span-columns(6 of 24);
       background: url('../img/logo/logo.png') left no-repeat;
     }
+    .footer-top-cell-2 {
+      @include span-columns(6 of 24);
+    }
     .footer-top-cell-3 {
+      @include span-columns(6 of 24);
       .footer-contacts {
         background: url('../img/icons/used/icon_time_bottom.png') left center no-repeat;
       }
     }
     .footer-top-cell-4 {
+      @include span-columns(6 of 24);
       @include omega();
-      align-items: flex-end;
+
       .footer-contacts {
         background: url('../img/icons/used/icon_phone_bottom.png') left center no-repeat;
         text-align: right;

@@ -1,7 +1,8 @@
 
 $pc: new-breakpoint(max-width 1280px 12);
+$header-unbreakable: new-breakpoint(max-width 1024px 12);
 $tablet: new-breakpoint(max-width 768px 10);
-$mobile: new-breakpoint(max-width 480px 4);
+$mobile: new-breakpoint(max-width 512px 4);
 
 
 /*$gutter: modular-scale(3, 1em, $golden) !default;*/

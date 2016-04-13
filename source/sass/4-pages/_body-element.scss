@@ -1,11 +1,13 @@
 $pc: new-breakpoint(max-width 1280px 12);
+
+$header-unbreakable: new-breakpoint(max-width 1024px 12);
+$mc2-unbr: new-breakpoint(max-width 832px 10);
 $tablet: new-breakpoint(max-width 768px 10);
+$footer-unbr: new-breakpoint(max-width 600px 4);
+$h-phone-unbreakable: new-breakpoint(max-width 512px 4);
 $mobile: new-breakpoint(max-width 480px 4);
-$nth: 1;/*
-@mixin omega-reset($nth) {
-  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
-  &:nth-child(#{$nth}+1) { clear: none }
-}*/
+
+$nth: 1;
 @mixin omega-reset($nth, $context: null) {
   @if $context == null {
     &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
@@ -19,23 +21,43 @@ $nth: 1;/*
 .main-container-1 {
   color: $text;
   font-size: 0;
-  padding-top: 1rem;
+  min-width: $uncompressed;
+  padding: 1rem 2rem 0 2rem;
 
   @include outer-container();
 
-  .main-container-1-cell {
-    @include span-columns(3);
-    @include omega(4n);
-    @include media($pc) {
+  @include media($header-unbreakable) {
+    .main-container-1-cell {
       @include span-columns(4);
       @include omega-reset(4n);
       @include omega(3n);
     }
-    @include media($tablet) {
+  }
+  @include media($tablet) {
+    padding: 1rem 0.5rem 0 0.5rem;
+    .main-container-1-cell {
       @include span-columns(5);
       @include omega-reset(3n);
       @include omega(2n);
     }
+    .main-carousel-promo {
+      width: 10rem;
+    }
+  }
+  //Устанавливает кнопки сервиса по одной на строку Начало
+  /*@include media($mobile) {
+    padding: 1rem 2rem 0 2rem;
+    .main-container-1-cell {
+      @include span-columns(4);
+      @include omega-reset(2n);
+      @include omega(n);
+    }
+  }*/
+  //Окончание
+
+  .main-container-1-cell {
+    @include span-columns(3);
+    @include omega(4n);
 
     height: 4rem;
     margin-top: 1rem;
@@ -84,39 +106,39 @@ $nth: 1;/*
     background-size: cover;
     padding: 2rem 1.125rem;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .main-carousel-container {
-      display: flex;
-      align-items: center;
-
+    //.start {
       .main-carousel-promo {
-        width: 470px;
-        height: 224px;
-        opacity: 0.9;
-        background-color: white;
+        width: 30rem;
+        //height: 14rem;
+        background-color: rgba(255, 255, 255, 0.9);
         border: 1px solid white;
         padding: 2rem;
         margin-left: 2rem;
+        @include media($tablet) {
+            width: 18.5rem;
+            margin-left: 1.5rem;
+        }
+        @include media($mobile) {
+          width: 15rem;
+          margin-left: 1rem;
+        }
         .main-carousel-promo-1 {
           font-size: 1.5rem;
           font-weight: $bold;
-          line-height: 20px;
-          margin-bottom: 26px;
+          line-height: 1.25rem;
+          margin-bottom: 1.625rem;
         }
         .main-carousel-promo-2 {
-          height: 54px;
+          height: 3.375rem;
           text-overflow: clip;
           overflow: hidden;
           font-size: 1rem;
-          font-weight: 400;
-          line-height: 18px;
-          margin-bottom: 26px;
+          font-weight: $normal;
+          line-height: 1.125rem;
+          margin-bottom: 1.625rem;
         }
       }
-    }
+    //}
   }
   .main-carousel-bar {
     @include span-columns(12);
@@ -150,11 +172,73 @@ $nth: 1;/*
 }
 .main-gray-container {
   background-color: $whitesmoke;
+  font-size: 0;
+  min-width: $uncompressed;
+  //padding: 2rem;
+
+  /*  @include media($tablet) {
+    padding: 1rem 0.5rem 0 0.5rem;}
+  */
 
   .main-container-2 {
     @include outer-container();
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem;
+
+    @include media($pc) {
+      .mc2-block-1 {
+        @include span-columns(6);
+      }
+      .mc2-block-2 {
+        @include span-columns(6);
+        @include omega();
+      }
+      .mc2-block-3 {
+        margin-top: 2rem;
+        @include span-columns(12);
+        @include omega();
+        .mc2-block-3-1 {
+          @include span-columns(6);
+          margin-bottom: 0;
+          .justify {
+            padding: 0.438rem 0; //одинаковый размер блоков 1 и 2
+          }
+        }
+        .mc2-block-3-2 {
+          @include span-columns(6);
+          @include omega();
+        }
+      }
+    }
+    @include media($mc2-unbr) {
+      .mc2-block-1 {
+        @include span-columns(10);
+        @include omega();
+      }
+      .mc2-block-2 {
+        margin-top: 1rem;
+        @include omega-reset(2n);
+        @include span-columns(10);
+        @include omega();
+      }
+      .mc2-block-3 {
+        margin-top: 1rem;
+        @include span-columns(10);
+        @include omega();
+        .mc2-block-3-1 {
+          @include span-columns(10);
+          @include omega();
+          margin-bottom: 0;
+        }
+        .mc2-block-3-2 {
+          margin-top: 1rem;
+          @include span-columns(10);
+          @include omega();
+        }
+      }
+    }
+    @include media($tablet) {
+      padding: 2rem 0.5rem;
+    }
     .mc2-block-1 {
       @include span-columns(4);
       background-color: $white;
@@ -320,6 +404,7 @@ $nth: 1;/*
           }
         }
         .text-block-12 {
+          //line-height: 1rem;
           padding-bottom: 1rem;
         }
         .mc2-block-2-btn {
@@ -361,9 +446,33 @@ $nth: 1;/*
 
 .main-container-3 {
   @include outer-container();
-  padding-top: 1rem;
-  padding-bottom: 2rem;
+  //font-size: 0;
+  min-width: $uncompressed;
+  //padding-top: 1rem;
+  //padding-bottom: 2rem;
+  padding: 1rem 2rem 2rem 2rem;
 
+  @include media($header-unbreakable) {
+    .mc3-block-1 {
+      @include span-columns(12);
+      @include omega();
+    }
+    .mc3-block-2 {
+      @include span-columns(6);
+      @include omega-reset(2n);
+
+    }
+    .mc3-block-3 {
+      @include span-columns(6);
+      @include omega();
+      /*.cell-21 {
+        line-height: 1rem;
+      }*/
+    }
+  }
+  @include media($tablet) {
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
 
   .mc3-block-1 {
     @include span-columns(6);
@@ -397,6 +506,7 @@ $nth: 1;/*
     }
   }
   .mc3-block-2 {
+    display: table;
     @include span-columns(3);
     padding-bottom: 1.5rem;
     .text-h1 {
@@ -410,11 +520,16 @@ $nth: 1;/*
     .cell-14,
     .cell-15 {
       display: block;
+
       line-height: 2rem;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       padding-left: 3rem;
-      vertical-align: middle;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
       color: $text;
       background: url('../img/icon/mini/icon_workstation-.png') 100% 100% no-repeat;
       background-position: center;
@@ -439,6 +554,7 @@ $nth: 1;/*
       background: url('../img/icon/mini/icon_ebook-.png') center left no-repeat;
       background-position-x: 0.875rem;//подгонка узких иконок
       margin-bottom: 0.5rem;
+
     }
     .cell-16 {
       //padding-top: 1rem;
@@ -458,12 +574,18 @@ $nth: 1;/*
     .cell-20,
     .cell-21 {
       display: block;
+
       line-height: 2rem;
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       padding-left: 3rem;
       vertical-align: middle;
       color: $text;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
       background: url('../img/icon/mini/icon_apple-monitor-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;

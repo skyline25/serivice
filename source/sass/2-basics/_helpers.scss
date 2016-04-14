@@ -35,12 +35,67 @@ $nth: 1;
 .box-shadow-header {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
+.main-triangle-container {
+  background-color: $white;
+  @include outer-container();
+  .triangle {
+    @include span-columns(12);
+    @include omega();
+    //border: 1px dashed blue;
+    //height: 1rem;
+    display: flex;
+    justify-content: center;
+    &-left {
+      @include size(1rem);
+      border: 1rem solid transparent;
+      border-bottom-color: $white;
+      border-left-width: 0;
+      border-top-width: 0;
+      border-right-color: $whitesmoke;
+    }
+    &-right {
+      @include size(1rem);
+      border: 1rem solid transparent;
+      border-bottom-color: $white;
+      border-right-width: 0;
+      border-top-width: 0;
+      border-left-color: $whitesmoke;
+    }
+  }
+}
+.input-class-check,
+.input-class-name,
+.input-class-phone {
+  display: block;
+  @include size(100% 3rem);
+  font-size: 1rem;
+  color: $text;
+  border: 1px solid $blue-hover;
+  padding-left: 4rem;
+  margin-bottom: 1rem;
+}
+.input-class-check {
+  background: url('../img/icons/icon_check_big.png') center left 1rem no-repeat;
+}
+.input-class-name {
+  background: url('../img/icons/icon_man.png') center left 1.1875rem no-repeat;
+}
+.input-class-phone {
+  background: url('../img/icons/icon_phone_bottom.png') center left 1rem no-repeat;
+}
+
 
 .text-img {
   @include size(100% 4rem);
   background: url('../img/images/2.jpg') 100% 100% no-repeat;
   background-position: center;
   background-size: cover;
+}
+.text-h-sale {
+  font-size: 1.75rem;
+  font-weight: $bold;
+  line-height: 1.5rem;
+  text-transform: uppercase;
 }
 .text-h1,
 .block-h1{
@@ -55,6 +110,11 @@ $nth: 1;
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: $bold;
+}
+.text-block-16 {
+  font-size: 1rem;
+  color: $text;
+  font-weight: $normal;
 }
 .text-s,
 .text-block-14{

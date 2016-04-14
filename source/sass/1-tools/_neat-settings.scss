@@ -1,9 +1,27 @@
-
+/*
 $pc: new-breakpoint(max-width 1280px 12);
 $header-unbreakable: new-breakpoint(max-width 1024px 12);
 $tablet: new-breakpoint(max-width 768px 10);
 $mobile: new-breakpoint(max-width 512px 4);
+*/
 
+$pc: new-breakpoint(max-width 1280px 12);
+$header-unbreakable: new-breakpoint(max-width 1024px 12);
+$mc2-unbr: new-breakpoint(max-width 832px 10);
+$tablet: new-breakpoint(max-width 768px 10);
+$footer-unbr: new-breakpoint(max-width 600px 4);
+$h-phone-unbreakable: new-breakpoint(max-width 512px 4);
+$mobile: new-breakpoint(max-width 480px 4);
+
+$nth: 1;
+@mixin omega-reset($nth, $context: null) {
+  @if $context == null {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  } @else {
+    &:nth-child(#{$nth}) { margin-right: flex-gutter($context); }
+  }
+  &:nth-child(#{$nth}+1) { clear: none; }
+}
 
 /*$gutter: modular-scale(3, 1em, $golden) !default;*/
 /*$visual-grid: true;*/

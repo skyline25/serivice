@@ -92,7 +92,7 @@ $nth: 1;
         height: 3rem;
         width: 5rem;
         border-right: 1px solid white;
-        background: url('../img/icon/mc-1/0#{$i}.png') center no-repeat;
+        background: url('../img/icons/mc-1/0#{$i}.png') center no-repeat;
       }
     }
   }
@@ -358,7 +358,7 @@ $nth: 1;
 
           .mc2-block-3-ava {
             @include size(4rem 4rem);
-            background: url('../img/icon/avatar_boykodmitriy.png') center no-repeat;
+            background: url('../img/icons/avatar_boykodmitriy.png') center no-repeat;
             background-size: contain;
           }
           .mc2-block-3-social-info {
@@ -393,12 +393,12 @@ $nth: 1;
           @include size(100% 3rem);
           border: 1px solid $blue-hover;
           padding-left: 4rem;
-          background: url('../img/icon/icon_man.png') 1rem 1rem no-repeat;
+          background: url('../img/icons/icon_man.png') 1rem 1rem no-repeat;
           background-position: center;
           background-position-x: 1rem;
           margin-bottom: 1rem;
           &:last-child {
-            background: url('../img/icon/icon_phone_bottom.png') 1rem 1rem no-repeat;
+            background: url('../img/icons/icon_phone_bottom.png') 1rem 1rem no-repeat;
             background-position: center;
             background-position-x: 1rem;
           }
@@ -492,7 +492,7 @@ $nth: 1;
       @include size(100% 2rem);
       padding-left: 2rem;
       margin-bottom: 1rem;
-      background: url('../img/icon/icon_check.png') center left no-repeat;
+      background: url('../img/icons/icon_check.png') center left no-repeat;
       //background-position: center left;
     }
     .cell-4 {
@@ -531,7 +531,7 @@ $nth: 1;
       overflow: hidden;
 
       color: $text;
-      background: url('../img/icon/mini/icon_workstation-.png') 100% 100% no-repeat;
+      background: url('../img/icons/mini/icon_workstation-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;
       &:hover {
@@ -539,19 +539,19 @@ $nth: 1;
       }
     }
     .cell-12 {
-      background: url('../img/icon/mini/icon_monoblock.png') center no-repeat;
+      background: url('../img/icons/mini/icon_monoblock.png') center no-repeat;
       background-position-x: 0.5rem;
     }
     .cell-13 {
-      background: url('../img/icon/mini/icon_laptop-.png') center no-repeat;
+      background: url('../img/icons/mini/icon_laptop-.png') center no-repeat;
       background-position-x: 0.5rem;
     }
     .cell-14 {
-      background: url('../img/icon/mini/icon_tablet-.png') center left no-repeat;
+      background: url('../img/icons/mini/icon_tablet-.png') center left no-repeat;
       background-position-x: 0.75rem;//подгонка узких иконок
     }
     .cell-15 {
-      background: url('../img/icon/mini/icon_ebook-.png') center left no-repeat;
+      background: url('../img/icons/mini/icon_ebook-.png') center left no-repeat;
       background-position-x: 0.875rem;//подгонка узких иконок
       margin-bottom: 0.5rem;
 
@@ -586,7 +586,7 @@ $nth: 1;
       text-overflow: ellipsis;
       overflow: hidden;
 
-      background: url('../img/icon/mini/icon_apple-monitor-.png') 100% 100% no-repeat;
+      background: url('../img/icons/mini/icon_apple-monitor-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;
       &:hover {
@@ -594,22 +594,22 @@ $nth: 1;
       }
     }
     .cell-18 {
-      background: url('../img/icon/mini/icon_cellphone-.png') 100% 100% no-repeat;
+      background: url('../img/icons/mini/icon_cellphone-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.875rem;//подгонка узких иконок
     }
     .cell-19 {
-      background: url('../img/icon/mini/icon_monitor.png') 100% 100% no-repeat;
+      background: url('../img/icons/mini/icon_monitor.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;
     }
     .cell-20 {
-      background: url('../img/icon/mini/1.png') 100% 100% no-repeat;
+      background: url('../img/icons/mini/1.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;//подгонка узких иконок
     }
     .cell-21 {
-      background: url('../img/icon/mini/icon_building-.png') 100% 100% no-repeat;
+      background: url('../img/icons/mini/icon_building-.png') 100% 100% no-repeat;
       background-position: center;
       background-position-x: 0.5rem;//подгонка узких иконок
     }
@@ -637,7 +637,7 @@ $nth: 1;
           vertical-align: bottom;
           text-align: center;
           margin-right: 3rem;
-          background: url('../img/icon/brand/0#{$i}.png') center top no-repeat;
+          background: url('../img/icons/brand/0#{$i}.png') center top no-repeat;
           background-size: contain;
         }
         .element-6 {
@@ -646,42 +646,4 @@ $nth: 1;
       }
     }
   }
-}/*
-.test-mc-4 {
-  $test: new-breakpoint(max-width 800px 10);
-  $test-480: new-breakpoint(max-width 480px 4);
-
-  @include outer-container();
-  .test-sc-1 {
-    @include span-columns(4);
-    @include media($test) {
-      @include span-columns(5);
-    }
-    @include media($test-480) {
-      @include span-columns(4);
-      @include omega();
-    }
-    margin-top: 1rem;
-    height: 3rem;
-    border: 1px dashed blue;
-  }
-  .test-sc-2 {
-    @include span-columns(4);
-    @include shift(4);
-    @include omega();
-    @include media($test) {
-      @include span-columns(5);
-      @include shift(0);
-      @include omega();
-    }
-    @include media($test-480) {
-      @include span-columns(4);
-      @include omega();
-    }
-    margin-top: 1rem;
-    height: 3rem;
-    border: 1px dashed blue;
-  }
-
 }
-*/

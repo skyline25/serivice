@@ -24,6 +24,7 @@
     "gulp-concat": "^2.5.2",
     "gulp-deporder": "^1.1.0",
     "gulp-htmlclean": "^2.6.4",
+    "gulp-sourcemaps": "",
     "gulp-jade": "^1.0.1",
     "gulp-jshint": "^1.11.0",
     "gulp-load-plugins": "^1.0.0-rc.1",

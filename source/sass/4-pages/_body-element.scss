@@ -183,70 +183,16 @@ $nth: 1;
   .main-container-2 {
     @include outer-container();
     padding: 2rem;
-
-    @include media($pc) {
-      .mc2-block-1 {
-        @include span-columns(6);
-      }
-      .mc2-block-2 {
-        @include span-columns(6);
-        @include omega();
-      }
-      .mc2-block-3 {
-        margin-top: 2rem;
-        @include span-columns(12);
-        @include omega();
-        .mc2-block-3-1 {
-          @include span-columns(6);
-          margin-bottom: 0;
-          .justify {
-            padding: 0.438rem 0; //одинаковый размер блоков 1 и 2
-          }
-        }
-        .mc2-block-3-2 {
-          @include span-columns(6);
-          @include omega();
-        }
-      }
-    }
-    @include media($mc2-unbr) {
-      .mc2-block-1 {
-        @include span-columns(10);
-        @include omega();
-      }
-      .mc2-block-2 {
-        margin-top: 1rem;
-        @include omega-reset(2n);
-        @include span-columns(10);
-        @include omega();
-      }
-      .mc2-block-3 {
-        margin-top: 1rem;
-        @include span-columns(10);
-        @include omega();
-        .mc2-block-3-1 {
-          @include span-columns(10);
-          @include omega();
-          margin-bottom: 0;
-        }
-        .mc2-block-3-2 {
-          margin-top: 1rem;
-          @include span-columns(10);
-          @include omega();
-        }
-      }
-    }
-    @include media($tablet) {
-      padding: 2rem 0.5rem;
+    .mc2-block {
+      @include span-columns(4);
     }
     .mc2-block-1 {
-      @include span-columns(4);
       background-color: $white;
 
       .block-h1,
       &-promo,
       &-btn {
-        @include size(100% 3rem);
+        width: 100%;
         padding: 0 2rem;
         display: block;
       }
@@ -268,6 +214,13 @@ $nth: 1;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          @include media($mc2-unbr) {
+            flex-wrap: wrap;
+            > div {
+              width: 100%;
+              line-height: 2rem;
+            }
+          }
         }
 
         &-price {
@@ -290,7 +243,6 @@ $nth: 1;
       }
     }
     .mc2-block-2 {
-      @include span-columns(4);
       background-color: $white;
       padding: 0 2rem;
       font-size: 0.875rem;
@@ -337,9 +289,6 @@ $nth: 1;
       }
     }
     .mc2-block-3 {
-      @include span-columns(4);
-      @include omega();
-
       &-1{
         padding: 0 2rem;
         background-color: $white;
@@ -400,6 +349,57 @@ $nth: 1;
           justify-content: center;
         }
       }
+    }
+    @include media($pc) {
+      .mc2-block-1 {
+        @include span-columns(6);
+      }
+      .mc2-block-2 {
+        @include span-columns(6);
+        @include omega();
+      }
+      .mc2-block-3 {
+        margin-top: 2rem;
+        @include span-columns(12);
+        @include omega();
+        .mc2-block-3-1 {
+          @include span-columns(6);
+          margin-bottom: 0;
+          .justify {
+            padding: 0.438rem 0; //одинаковый размер блоков 1 и 2
+          }
+        }
+        .mc2-block-3-2 {
+          @include span-columns(6);
+          @include omega();
+        }
+      }
+    }
+    @include media($mc2-unbr) {
+      .mc-block {
+        @include span-columns(10);
+        @include omega-reset(2n);
+        @include omega();
+        margin-bottom: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .mc2-block-3 {
+        .mc2-block-3-1 {
+          @include span-columns(10);
+          @include omega();
+          margin-bottom: 0;
+        }
+        .mc2-block-3-2 {
+          margin-top: 1rem;
+          @include span-columns(10);
+          @include omega();
+        }
+      }
+    }
+    @include media($tablet) {
+      padding: 2rem 0.5rem;
     }
   }
 }
@@ -581,7 +581,6 @@ $nth: 1;
       .cross-link-blue {
         @include span-columns(4);
         font-size: 1.125rem;
-        display: inline-block;
         height: 5rem;
         padding-top: 3.875rem;
         vertical-align: bottom;

@@ -7,6 +7,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')({ lazy: true });
 var browsersync = require('browser-sync');
+var sourcemaps = require('gulp-sourcemaps');
 var del = require('del');
 var config = require('./config.js')();
 
@@ -155,11 +156,13 @@ gulp.task('html', function () {
 gulp.task('sass', function () {
   log('-> Compile SASS Styles')
   return gulp.src(styles.in)
+    .pipe(sourcemaps.init())
     .pipe($.plumber())
     .pipe($.sass(styles.sassOpt))
     .pipe($.size({ title: 'styles In Size' }))
     .pipe($.pleeease(styles.pleeeaseOpt))
     .pipe($.size({ title: 'styles Out Size' }))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(styles.out))
     .pipe(browsersync.reload({ stream: true }));
 });

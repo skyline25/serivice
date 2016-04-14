@@ -38,18 +38,27 @@
     .warranty-cell-normalize {
       background: url('../img/icons/technical-sale-2.png') center left no-repeat;
       padding-left: 23rem;
+      height: 9rem;
     }
 
+    .justify {
+      width: 100%;
+    }
     .block-h1 {
       line-height: 1rem;
       border-bottom: 1px solid $gray-footer-bg;
-      padding-bottom: 1rem;
+      padding-bottom: 0.875rem;
+
+      border: 1px dashed purple;
     }
     .text-block-16 {
-      padding-top: 1rem;
-      height: 6rem;
+      padding-top: 0.875rem;
+      line-height: 1rem;
+
+      //height: 6.25rem;
       //overflow: hidden;
       //text-overflow: clip;
+      border: 1px dashed red;
     }
 
   }
@@ -60,6 +69,7 @@
       .warranty-cell-normalize {
         .text-block-16 {
           font-size: 0.875rem;
+          line-height: 0.875rem;
         }
       }
     }
@@ -68,12 +78,14 @@
   @include media($war-unbr2) {
     .warranty-cell {
       .warranty-cell-normalize {
+        height: auto;
         background: none;
         padding: 0;
         .text-block-16 {
           font-size: 1rem;
+          line-height: 1.125rem;
           padding-top: 1rem;
-          height: auto;
+
         }
       }
     }

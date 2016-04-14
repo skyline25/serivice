@@ -362,23 +362,11 @@ $nth: 1;
         margin-top: 2rem;
         @include span-columns(12);
         @include omega();
-        .mc2-block-3-1 {
-          @include span-columns(6);
-          margin-bottom: 0;
-          .justify {
-            padding: 0.438rem 0; //одинаковый размер блоков 1 и 2
-          }
-        }
-        .mc2-block-3-2 {
-          @include span-columns(6);
-          @include omega();
-        }
       }
     }
     @include media($mc2-unbr) {
-      .mc-block {
+      .mc2-block {
         @include span-columns(10);
-        @include omega-reset(2n);
         @include omega();
         margin-bottom: 1rem;
         &:last-child {
@@ -386,15 +374,12 @@ $nth: 1;
         }
       }
       .mc2-block-3 {
-        .mc2-block-3-1 {
-          @include span-columns(10);
-          @include omega();
-          margin-bottom: 0;
-        }
-        .mc2-block-3-2 {
-          margin-top: 1rem;
-          @include span-columns(10);
-          @include omega();
+        .mc2-block-1 {
+          @include span-columns(10 of 10);
+          margin-bottom: 1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
     }

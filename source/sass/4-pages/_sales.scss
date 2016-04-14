@@ -1,6 +1,11 @@
-
-.sales-triangle {
+.main-container-sale {
+  background-color: $whitesmoke;
+  font-size: 0;
+  min-width: $uncompressed;
   margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+.sales-triangle {
   background-color: $whitesmoke;
   .triangle-left {
     border-bottom-color: $whitesmoke;
@@ -58,7 +63,8 @@
     .sale-form {
       padding-left: 0.5rem;
       padding-right: 13rem;
-      background: url('../img/icons/img_operator.png') center right no-repeat;
+      background: url('../../assets/img/img/icons/img_operator.png') center right no-repeat;
+      //img_operator.png
     }
     .justify {
       padding: 0 1.5rem 0 0.5rem;
@@ -70,9 +76,9 @@
     margin-bottom: 1rem;
     padding: 1rem 2rem;
     background: $white;
-    &:last-child {
+    /*&:last-child {
       margin-bottom: 2rem;
-    }
+    }*/
     .s-cell-3-normalize {
       background: url('../img/icons/technical-sale.png') center left no-repeat;
       padding-left: 10rem;

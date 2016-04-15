@@ -1,28 +1,61 @@
 .main-container-contacts {
   @include outer-container();
   padding: 0 2rem;
+  font-size: 0;
+  min-width: $uncompressed;
   .c-pad {
     @include span-columns(12);
     @include omega();
     font-size: 0.75rem;
-    padding: 0.5rem 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     .cross-link-blue {
       font-size: 0.75rem;
+    }
+  }
+  .c-content {
+    padding: 0.5rem 0 0.5rem 3.5rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: $text;
+    font-weight: $normal;
+    .c-input {
+      padding-left: 1rem;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $text;
+      font-weight: $normal;
+      @include size(100% 2rem);
+      border: 1px solid $blue-hover;
+      margin-bottom: 0;
+    }
+    .c-comment {
+      @include size(100% 4rem);
+      margin-bottom: 0;
+    }
+  }
+  .block-h1 {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    line-height: 1.5rem;
+  }
+
+  $i: 1;
+  @for $i from 1 through 9 {
+    .c-img-#{$i} {
+      background: url('../img/icons/c-img/0#{$i}.png') center left 1rem no-repeat;
     }
   }
   .c-block-1 {
     @include span-columns(4);
     .c-block-1-a {
-      @include span-columns(4 of 4);
-      @include omega();
-      margin-bottom: 2rem;
-
-
-
+      //@include span-columns(4 of 4);
+      //@include omega();
+      //margin-bottom: 2rem;
     }
     .c-block-1-b {
-      @include span-columns(4 of 4);
-      @include omega();
+      //@include span-columns(4 of 4);
+      //@include omega();
     }
   }
   .c-block-2 {
@@ -32,20 +65,90 @@
       @include span-columns(8 of 8);
       @include omega-reset(1n);
       @include omega();
-      margin-bottom: 2rem;
+      //margin-bottom: 2rem;
+      .c-map {
+        @include size(100% 18rem);
+        background: url('../img/icons/c-map.png') center no-repeat;
+        background-size: cover;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
     }
     .c-block-2-b {
       @include span-columns(4 of 8);
+      .text-block-14 {
+        @include size(100% 13rem); //временная высота для текстового блока
+      }
     }
     .c-block-2-c {
       @include span-columns(4 of 8);
       @include omega();
+      .center {
+        margin: 0.5rem 0;
+      }
+      .c-carousel {
+        @include size(100% 13rem);
+        background: url('../img/icons/c-carousel.png') center no-repeat;
+        background-size: cover;
+      }
     }
   }
 
+  @include  media($pc) {
+    .c-block-1 {
+      @include span-columns(12 of 12);
+      &-a {
+        @include span-columns(6 of 12);
+      }
+      &-b {
+        @include span-columns(6 of 12);
+        @include omega();
+      }
+      @include omega();
+    }
+    .c-block-2 {
+      @include span-columns(12 of 12);
+      &-a {
+        @include span-columns(12 of 12);
+        @include omega();
+      }
+      &-b {
+        @include span-columns(6 of 12);
+        @include omega-reset(1n);
+      }
+      &-c {
+        @include span-columns(6 of 12);
+      }
+      @include omega();
+    }
+  }
 
-
-  @include media($tablet) {
+  @include media($tablet) { //работает только если заменить & на полное имя класса
     padding: 0 0.5rem;
+    .c-block-1 {
+      @include span-columns(10);
+      .c-block-1-a {
+        @include span-columns(10);
+        @include omega();
+      }
+      .c-block-1-b {
+        @include span-columns(10);
+        @include omega();
+      }
+    }
+    .c-block-2 {
+      .c-block-2-a {
+        @include span-columns(10);
+        @include omega();
+      }
+      .c-block-2-b {
+        @include span-columns(10);
+        @include omega();
+      }
+      .c-block-2-c {
+        @include span-columns(10);
+        @include omega();
+      }
+    }
   }
 }

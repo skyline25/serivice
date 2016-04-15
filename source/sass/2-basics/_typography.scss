@@ -26,6 +26,7 @@
 }
 .text-block-16 {
   font-size: 1rem;
+  //line-height: 1rem;
   color: $text;
   font-weight: $normal;
 }
@@ -46,4 +47,16 @@
   font-weight: $lite;
   font-size: 0.875rem;
   line-height: 1rem;
+}
+
+.overflow {
+  overflow: hidden;
+  text-overflow: clip;
+}
+.aquamarine {
+  color: $aquamarine;
+  &:hover {
+    color: $aquamarine;
+    text-decoration: underline;
+  }
 }

@@ -1,0 +1,51 @@
+.main-container-contacts {
+  @include outer-container();
+  padding: 0 2rem;
+  .c-pad {
+    @include span-columns(12);
+    @include omega();
+    font-size: 0.75rem;
+    padding: 0.5rem 0;
+    .cross-link-blue {
+      font-size: 0.75rem;
+    }
+  }
+  .c-block-1 {
+    @include span-columns(4);
+    .c-block-1-a {
+      @include span-columns(4 of 4);
+      @include omega();
+      margin-bottom: 2rem;
+
+
+
+    }
+    .c-block-1-b {
+      @include span-columns(4 of 4);
+      @include omega();
+    }
+  }
+  .c-block-2 {
+    @include span-columns(8);
+    @include omega();
+    .c-block-2-a {
+      @include span-columns(8 of 8);
+      @include omega-reset(1n);
+      @include omega();
+      margin-bottom: 2rem;
+    }
+    .c-block-2-b {
+      @include span-columns(4 of 8);
+    }
+    .c-block-2-c {
+      @include span-columns(4 of 8);
+      @include omega();
+    }
+  }
+
+
+
+  @include media($tablet) {
+    padding: 0 0.5rem;
+  }
+}

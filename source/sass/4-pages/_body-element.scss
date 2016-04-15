@@ -195,6 +195,7 @@ $nth: 1;
         width: 100%;
         padding: 0 2rem;
         display: block;
+        //height: 3rem;
       }
       .block-h1 {
         line-height: 3rem;
@@ -296,6 +297,7 @@ $nth: 1;
 
         .block-h1 {
           line-height: 3rem;
+          padding: 0;
         }
         .text-block-14 {
           height: 6rem;
@@ -337,6 +339,9 @@ $nth: 1;
           line-height: 1.5rem;
           padding-top: 1rem;
           padding-bottom: 1rem;
+          padding-left: 0;
+          padding-right: 0;
+          height: auto;
         }
 
         .text-block-12 {
@@ -351,7 +356,7 @@ $nth: 1;
       }
     }
     @include media($pc) {
-      .mc2-block-1 {
+      /*.mc2-block-1 {
         @include span-columns(6);
       }
       .mc2-block-2 {
@@ -362,24 +367,34 @@ $nth: 1;
         margin-top: 2rem;
         @include span-columns(12);
         @include omega();
+        .mc2-block-3-1 {
+          margin-bottom: 0;
+        }
+      }*/
+      .mc2-block {
+        @include span-columns(6 of 12);
+        @include omega(2n);
+        &:last-child {
+          margin-top: 2rem;
+          @include span-columns(12 of 12);
+          @include omega();
+          .mc2-block-3-1 {
+            margin-bottom: 2rem;
+          }
+        }
       }
+
     }
     @include media($mc2-unbr) {
       .mc2-block {
-        @include span-columns(10);
+        @include span-columns(10 of 10); //не работает!!!
         @include omega();
-        margin-bottom: 1rem;
+        //margin-bottom: 1rem;
         &:last-child {
-          margin-bottom: 0;
-        }
-      }
-      .mc2-block-3 {
-        .mc2-block-1 {
-          @include span-columns(10 of 10);
-          margin-bottom: 1rem;
-          &:last-child {
-            margin-bottom: 0;
+          .mc2-block-3-1 {
+            margin-bottom: 2rem;
           }
+          margin-bottom: 0;
         }
       }
     }

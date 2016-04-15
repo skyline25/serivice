@@ -44,21 +44,17 @@
     .justify {
       width: 100%;
     }
+    /*.column {
+      height: 7.125rem;
+    }*/
     .block-h1 {
       line-height: 1rem;
       border-bottom: 1px solid $gray-footer-bg;
       padding-bottom: 0.875rem;
-
-      border: 1px dashed purple;
     }
     .text-block-16 {
       padding-top: 0.875rem;
       line-height: 1rem;
-
-      //height: 6.25rem;
-      //overflow: hidden;
-      //text-overflow: clip;
-      border: 1px dashed red;
     }
 
   }
@@ -85,7 +81,7 @@
           font-size: 1rem;
           line-height: 1.125rem;
           padding-top: 1rem;
-
+          margin-bottom: 1rem;
         }
       }
     }

@@ -134,6 +134,10 @@ $nth: 1;
   font-size: 0.875rem;
   line-height: 1rem;
 }
+.overflow {
+  overflow: hidden;
+  text-overflow: clip;
+}
 .text-justify,//замениить на .justify
 .justify {
    display: flex;
@@ -160,4 +164,7 @@ $nth: 1;
 }
 .i-wrap {
   flex-wrap: nowrap;
+}
+.i-stretch {
+  align-items: stretch;
 }

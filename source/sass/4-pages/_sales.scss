@@ -4,7 +4,7 @@
   min-width: $uncompressed;
   margin-top: 2rem;
   padding-bottom: 2rem;
-}
+}/*
 .sales-triangle {
   background-color: $whitesmoke;
   .triangle-left {
@@ -15,7 +15,7 @@
     border-bottom-color: $whitesmoke;
     border-left-color: $white;
   }
-}
+}*/
 .sales-container {
   @include outer-container();
   padding: 0 2rem;
@@ -66,9 +66,9 @@
       padding-right: 13rem;
       background: url('../img/icons/img_operator.png') center right no-repeat;
     }
-    .justify {
+    /*.justify {
       padding: 0 1.5rem 0 0.5rem;
-    }
+    }*/
   }
   .sale-cell-3 {
     @include span-columns(6);

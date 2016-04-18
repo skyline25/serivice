@@ -24,6 +24,13 @@
     text-decoration: underline;
   }
 }
+.cross-link {
+  color: $text;
+  &:hover {
+    color: rgb(102, 201, 224);
+    text-decoration: underline;
+  }
+}
 .social-link {
   @include size(1.5rem);
   background: url('../img/icons/used/icon_vk-.png') center no-repeat;

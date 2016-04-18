@@ -11,7 +11,13 @@
     background-color: $blue;
   }
 }
-
+.carousel-block-2 {
+  padding: 1rem 2rem;
+  .block-h1 {
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
 .carousel-arrow-mini {
   display: inline-block;
   width: 2rem;
@@ -24,7 +30,29 @@
     background-color: $whitesmoke;
   }
 }
-
+.carousel-brand {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  .cross-link-blue {
+    @include span-columns(4);
+    font-size: 1.125rem;
+    height: 5rem;
+    padding-top: 3.875rem;
+    vertical-align: bottom;
+    text-align: center;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  $i: 1;
+  @for $i from 1 through 6 {
+    .element-#{$i} {
+      background: url('../img/icons/brand/0#{$i}.png') center top no-repeat;
+    }
+  }
+}
 .trial-carousel {
   display: block;
   width: 3rem;

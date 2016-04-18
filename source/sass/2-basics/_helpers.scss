@@ -63,6 +63,17 @@ $nth: 1;
     }
   }
 }
+.white-triangle {
+  background-color: $whitesmoke;
+  .triangle-left {
+    border-bottom-color: $whitesmoke;
+    border-right-color: $white;
+  }
+  .triangle-right {
+    border-bottom-color: $whitesmoke;
+    border-left-color: $white;
+  }
+}
 
 .input-class-check,
 .input-class-name,
@@ -85,6 +96,19 @@ $nth: 1;
   background: url('../img/icons/icon_phone_bottom.png') center left 1rem no-repeat;
 }
 
+.img-contact-cell {
+  padding: 1rem;
+  .input-block {
+    padding-left: 0.5rem;
+  }
+  .img-operator {
+    max-height: 11rem;
+    margin-left: 0.75rem;
+  }
+  .block-h1 {
+    margin-bottom: 0.75rem;
+  }
+}
 
 .text-justify,//замениить на .justify
 .justify {
@@ -116,7 +140,42 @@ $nth: 1;
 .i-stretch {
   align-items: stretch;
 }
+.grow {
+  flex-grow: 2;
+}
 
+
+.breadcrumbs {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+
+  .cross-link-blue {
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+  }
+}
+
+.margin-t1 {
+  margin-top: 1rem;
+}
+.margin-b1 {
+  margin-bottom: 1rem;
+}
+.margin-l2 {
+  margin-left: 2rem;
+}
+.padding-l2 {
+  padding-left: 2rem;
+}
+.padding-l-05 {
+  padding-left: 0.5rem;
+}
+.padding-l-1 {
+  padding-left: 1rem;
+}
+.margin-r-15 {
+  margin-right: 1.5rem;
+}
 
 //временная функция для просмотра разметки
 .t {

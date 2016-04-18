@@ -22,7 +22,8 @@ $nth: 1;
   color: $text;
   font-size: 0;
   min-width: $uncompressed;
-  padding: 1rem 2rem 0 2rem;
+  //padding: 1rem 2rem 0 2rem;
+  padding: 0 2rem;
 
   @include outer-container();
 
@@ -34,7 +35,7 @@ $nth: 1;
     }
   }
   @include media($tablet) {
-    padding: 1rem 0.5rem 0 0.5rem;
+    padding: 0 0.5rem;
     .main-container-1-cell {
       @include span-columns(5);
       @include omega-reset(3n);
@@ -569,32 +570,5 @@ $nth: 1;
     @include span-columns(12);
     @include omega();
     //height: 9rem;//временное значение
-    padding: 1rem 2rem;
-    .block-h1 {
-      line-height: 2rem;
-    }
-    .carousel-brand {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      width: 100%;
-      .cross-link-blue {
-        @include span-columns(4);
-        font-size: 1.125rem;
-        height: 5rem;
-        padding-top: 3.875rem;
-        vertical-align: bottom;
-        text-align: center;
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-      $i: 1;
-      @for $i from 1 through 6 {
-        .element-#{$i} {
-          background: url('../img/icons/brand/0#{$i}.png') center top no-repeat;
-        }
-      }
-    }
   }
 }

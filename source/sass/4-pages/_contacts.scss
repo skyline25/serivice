@@ -1,9 +1,10 @@
 .main-container-contacts {
   @include outer-container();
-  padding: 0 2rem;
+  padding: 0.5rem 2rem 0 2rem;
   font-size: 0;
   min-width: $uncompressed;
-  .c-pad {
+
+  /*.c-pad {
     @include span-columns(12);
     @include omega();
     font-size: 0.75rem;
@@ -12,7 +13,7 @@
     .cross-link-blue {
       font-size: 0.75rem;
     }
-  }
+  }*/
   .c-content {
     padding: 0.5rem 0 0.5rem 3.5rem;
     font-size: 1rem;

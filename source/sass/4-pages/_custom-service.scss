@@ -1,4 +1,6 @@
-.container {
+//вынесено в helpers.scss
+
+/*.container {
   @include outer-container();
   padding: 0 2rem;
   font-size: 0;
@@ -14,8 +16,8 @@
 .container-custom-service-breadcrumbs {
   margin-top: 0.5rem;
 }
-
-//.img-contact-cell - вынесен ов helpers.html
+*/
+//.img-contact-cell - вынесен ов helpers.scss
 
 .img-custom-service {
   @include size(100%);

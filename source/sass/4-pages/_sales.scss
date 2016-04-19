@@ -2,20 +2,10 @@
   background-color: $whitesmoke;
   font-size: 0;
   min-width: $uncompressed;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding-bottom: 2rem;
-}/*
-.sales-triangle {
-  background-color: $whitesmoke;
-  .triangle-left {
-    border-bottom-color: $whitesmoke;
-    border-right-color: $white;
-  }
-  .triangle-right {
-    border-bottom-color: $whitesmoke;
-    border-left-color: $white;
-  }
-}*/
+}
+
 .sales-container {
   @include outer-container();
   padding: 0 2rem;
@@ -49,12 +39,12 @@
     .text-block-14 {
       line-height: 1.125rem;
     }
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
   .sale-cell-2 {
     @include span-columns(6);
     @include omega();
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 1rem;
     background: $white;
     .block-h1 {

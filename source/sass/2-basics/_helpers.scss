@@ -149,6 +149,12 @@ $nth: 1;
 }
 
 .breadcrumbs {
+
+  height: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
   font-size: 0.75rem;
   line-height: 0.75rem;
 
@@ -182,6 +188,10 @@ $nth: 1;
 .margin-t1 {
   margin-top: 1rem;
 }
+.margin-t2 {
+  margin-top: 2rem;
+}
+
 .margin-b2 {
   margin-bottom: 2rem;
 }
@@ -199,6 +209,9 @@ $nth: 1;
 }
 .padding-b-05 {
   padding-bottom: 0.5rem;
+}
+.padding-t-05 {
+  padding-top: 0.5rem;
 }
 .padding-l-1 {
   padding-left: 1rem;

@@ -56,6 +56,14 @@
   @include media($header-unbreakable){
     @include span-columns(12 of 12);
     @include omega();
+    .img-about-process-1 {
+      //@include size(100%);
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-height: 10rem;
+      max-width: 35.625rem;
+      //background: url('../img/images/about/img-about-process-1.png') center no-repeat;
+    }
   }
   background: $white;
   padding: 1rem 0;

@@ -1,0 +1,73 @@
+.c-press-container {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+.c-press-block-1 {
+  @include span-columns(4);
+  @include media($pc){
+    @include span-columns(12);
+    @include omega();
+    .c-press-cell-1 {
+      @include span-columns(6);
+      //
+      @include media($tablet) {
+        @include span-columns(10);
+        @include omega();
+      }
+      //
+    }
+    .c-press-cell-2 {
+      @include span-columns(6);
+      @include omega();
+      padding-top: 2.5rem;
+      //
+      @include media($tablet) {
+        @include span-columns(10);
+        @include omega();
+        padding-top: 0;
+      }
+      //
+    }
+  }
+  @include media($tablet) {
+    @include span-columns(10);
+    @include omega();
+    .c-press-cell-1 {
+      @include span-columns(10);
+      @include omega();
+    }
+    .c-press-cell-2 {
+      @include span-columns(10);
+      @include omega();
+      padding-top: 0;
+    }
+  }
+
+  background: $white;
+  padding: 2rem 2rem 1rem 2rem;
+  margin-bottom: 1rem;
+}
+.img-c-press {
+  width: 100%;
+}
+.c-press-block-2 {
+  @include span-columns(8);
+  @include omega();
+  @include media($pc) {
+    @include span-columns(12);
+    @include omega();
+  }
+  @include media($tablet) {
+    .c-press-normalizer-1 {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  background: $white;
+  padding: 2rem 2rem 1rem 2rem;
+  .text-block-16 {
+    line-height: 1.5rem;
+  }
+
+}

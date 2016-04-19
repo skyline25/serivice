@@ -44,7 +44,7 @@
   $i: 1;
   @for $i from 1 through 9 {
     .c-img-#{$i} {
-      background: url('../img/icons/c-img/0#{$i}.png') center left 1rem no-repeat;
+      background: url('../img/images/c-img/0#{$i}.png') center left 1rem no-repeat;
     }
   }
   .c-block-1 {

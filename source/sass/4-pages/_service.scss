@@ -7,17 +7,6 @@
   padding: 1rem 0;
   background: $white;
   margin-bottom: 2rem;
-  @include span-columns(4);
-  @include omega(3n);
-  @include media($pc) {
-    @include span-columns(6);
-    @include omega-reset(1n);
-    @include omega(2n);
-    @include media($tablet) {
-      @include span-columns(10);
-      @include omega();
-    }
-  }
 
   .img-service {
     padding: 0 2rem;
@@ -41,6 +30,7 @@
   .service-cell {
     display: block;
     padding: 0 2rem;
+    transition: all 0.3s ease;
     &:hover {
       background: $whitesmoke;
     }
@@ -56,6 +46,18 @@
   }
   .justify {
     height: 3rem;
+  }
+
+  @include span-columns(4);
+  @include omega(3n);
+  @include media($pc) {
+    @include span-columns(6);
+    @include omega-reset(1n);
+    @include omega(2n);
+    @include media($tablet) {
+      @include span-columns(10);
+      @include omega();
+    }
   }
 }
 

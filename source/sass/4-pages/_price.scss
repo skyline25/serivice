@@ -1,0 +1,134 @@
+.price-menu {
+  @include span-columns(6);
+  @include omega();
+  @include media($header-unbreakable) {
+    @include span-columns(12);
+    @include omega();
+    .price-menu-cell-1 {
+      @include span-columns(6 of 12);
+    }
+    .price-menu-cell-2 {
+      @include span-columns(6 of 12);
+      @include omega();
+    }
+  }
+  background: $white;
+  padding-left: 2rem;
+
+  .price-menu-cell-1 {
+    @include span-columns(3 of 6);
+  }
+  .price-menu-cell-2 {
+    @include span-columns(3 of 6);
+    @include omega();
+    color: $blue;
+    font-weight: $bold;
+    .s-normalizer {
+      justify-content: space-between;
+    }
+    position: relative;
+
+    &:hover {
+      .price-menu-list {
+        display: block;
+      }
+    }
+  }
+}
+
+.price-block {
+  @include span-columns(12);
+  @include omega();
+
+  background: $white;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+
+  .price-header {
+    @include span-columns(12 of 12);
+    @include omega();
+    padding: 0 2rem;
+    color: $blue;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+  }
+
+  .price-header-row {
+    padding: 0 2rem;
+    height: 3rem;
+    color: $text;
+    font-size: 1.125rem;
+    line-height: 1.125rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+  }
+  .border-top {
+    @include span-columns(12);
+    border-top: 1px solid $whitesmoke;
+  }
+  .price-row {
+    @include span-columns(12);
+    //display: block;
+    padding: 0 2rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: $text;
+    font-weight: $normal;
+    transition: all 0.3s ease;
+    &:hover {
+      background: $whitesmoke;
+      color: $text;
+    }
+  }
+}
+.price-menu-list {
+  @include span-columns(3 of 3);
+  background: $white;
+  display: none;
+  position: absolute;
+  top: 0;
+}
+.s-normalizer-menu {
+  //@include span-columns(1 of 3);
+  padding-left: 1rem;
+  height: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: $text;
+  font-weight: $normal;
+  transition: all 0.3s ease;
+  &:hover {
+    background: $whitesmoke;
+  }
+
+}
+.s-normalizer {
+  padding-left: 1rem;
+  height: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+.img-price {
+  max-height: 2rem;
+}
+.img-check {
+  margin-right: 1rem;
+}
+
+.p-cell-1 {
+  @include span-columns(6 of 12);
+}
+.p-cell-2,
+.p-cell-3,
+.p-cell-4 {
+  @include span-columns(2 of 12);
+}
+.p-cell-4 {
+  @include span-columns(2 of 12);
+  @include omega();
+}

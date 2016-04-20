@@ -128,6 +128,9 @@ $nth: 1;
 .column {
   flex-direction: column;
 }
+.space-between {
+  justify-content: space-between;
+}
 
 .i-start {
   align-items: flex-start;
@@ -214,6 +217,10 @@ $nth: 1;
 .padding-t-05 {
   padding-top: 0.5rem;
 }
+.padding-t1 {
+  padding-top: 1rem;
+}
+
 .padding-l-1 {
   padding-left: 1rem;
 }

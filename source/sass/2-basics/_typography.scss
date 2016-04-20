@@ -66,6 +66,9 @@
   overflow: hidden;
   text-overflow: clip;
 }
+.white-space {
+  white-space: nowrap;
+}
 .aquamarine {
   color: $aquamarine;
   &:hover {

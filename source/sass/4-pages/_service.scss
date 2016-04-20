@@ -1,0 +1,111 @@
+.c-service-block-header {
+  @include span-columns(12);
+  @include omega();
+}
+
+.service-block {
+  padding: 1rem 0;
+  background: $white;
+  margin-bottom: 2rem;
+  @include span-columns(4);
+  @include omega(3n);
+  @include media($pc) {
+    @include span-columns(6);
+    @include omega-reset(1n);
+    @include omega(2n);
+    @include media($tablet) {
+      @include span-columns(10);
+      @include omega();
+    }
+  }
+
+  .img-service {
+    padding: 0 2rem;
+    height: 12rem;
+    width: 100%;
+  }
+  $i: 1;
+  @for $i from 1 through 9 {
+    .img-service-#{$i} {
+      background: url('../img/images/c-service/#{$i}.png') center no-repeat;
+    }
+  }
+  .block-h1 {
+    padding: 0 2rem;
+    margin-bottom: 1rem;
+  }
+  .text-date {
+    padding: 0 2rem;
+    height: 4rem;
+  }
+  .service-cell {
+    display: block;
+    padding: 0 2rem;
+    &:hover {
+      background: $whitesmoke;
+    }
+    .text-block-16 {
+      line-height: 1rem;
+    }
+    .justify {
+      border-bottom: 1px solid $whitesmoke;
+      .white-space {
+        padding-left: 1rem;
+      }
+    }
+  }
+  .justify {
+    height: 3rem;
+  }
+}
+
+//Вынести в общие классы Начало
+.u-sales-block {
+  &-normalizer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    .block-h1 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .u-sales-img {
+      @include size(100% 10rem);
+      background: url('../img/images/c-work/img-block-6.png') left center no-repeat;
+      background-size: cover;
+      margin-bottom: 1rem;
+      .justify {
+        padding: 0 1rem;
+        height: 10rem;
+      }
+    }
+    .text-block-14 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      max-height: 3rem;
+    }
+  }
+  .end {
+    height: 2rem;
+  }
+}
+//Окончание
+
+.service-block-10 {
+  @include span-columns(6);
+  margin-top: 1rem;
+}
+
+.service-block-11 {
+  @include span-columns(6);
+  @include omega();
+  margin-top: 1rem;
+}
+
+@include media($header-unbreakable) {
+  .service-block-10,
+  .service-block-11 {
+    @include span-columns(12 of 12);
+    @include omega();
+  }
+}

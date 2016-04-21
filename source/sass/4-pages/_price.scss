@@ -31,6 +31,7 @@
     &:hover {
       .price-menu-list {
         display: block;
+        z-index: 101;
       }
     }
   }

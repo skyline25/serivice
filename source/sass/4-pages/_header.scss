@@ -13,15 +13,23 @@ $nth: 1;
   &:nth-child(#{$nth}+1) { clear: none; }
 }
 
+
 .header-all {
   color: $text;
   min-width: $uncompressed;
+  //position: relative;
+  //top: 2rem;
   .header-top-side {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 102;
     background-color: $gray-header-bg;
     //padding: 0 2rem;
 
     height: 2rem;
     font-size: 0;
+
     .header-menu {
       padding: 0 2rem;
       @include outer-container;
@@ -64,6 +72,7 @@ $nth: 1;
     }
   }
   .header-bottom-side {
+
     padding: 1rem 2rem;
     @include outer-container();
 

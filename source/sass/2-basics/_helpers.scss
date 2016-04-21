@@ -8,6 +8,10 @@ $nth: 1;
   &:nth-child(#{$nth}+1) { clear: none; }
 }
 
+body {
+  position: relative;
+  top: 2rem;
+}
 .outer-container {
   @include outer-container;
 }

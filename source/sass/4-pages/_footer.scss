@@ -3,6 +3,7 @@
   color: $text;
   font-size: 0;
   min-width: $uncompressed;
+
   .footer-contacts {
     display: inline-block;
     text-align: left;
@@ -10,96 +11,20 @@
     padding-left: 2.75rem;
     background: url('../img/icons/used/icon_map_bottom.png') left 5px center no-repeat;
   }
+
   .footer-outer-container {
     min-width: $uncompressed;
     @include outer-container();
     padding: 0 2rem;
-    @include media($pc){
-      .footer-top-cell-1 {
-        @include span-columns(12);
-        @include omega();
-        background-position: center;
-      }
-      .footer-top-cell-2 {
-        @include span-columns(4);
-        .i-end {
-          align-items: flex-start;
-        }
-      }
-      .footer-top-cell-3 {
-        @include span-columns(4);
-        .i-end {
-          align-items: center;
-        }
-      }
-      .footer-top-cell-4 {
-        @include span-columns(4);
-        @include omega();
-        .i-end {
-          align-items: flex-end;
-        }
-      }
-    }
-    @include media($mc2-unbr){
-      .footer-top-cell-1 {
-        @include span-columns(5);
-        @include omega-reset(1n);
-        background-position: left;
-      }
-      .footer-top-cell-2 {
-        @include span-columns(5);
-        @include omega();
-        .i-end {
-          align-items: flex-end;
-        }
-      }
-      .footer-top-cell-3 {
-        @include span-columns(5);
-        .i-end {
-          align-items: flex-start;
-        }
-      }
-      .footer-top-cell-4 {
-        @include span-columns(5);
-        @include omega();
-      }
-    }
+
     @include media($tablet) {
       padding: 0 0.5rem;
     }
-    @include media($footer-unbr) {
-      .footer-top-cell-1 {
-        @include span-columns(4);
-        @include omega();
-        background-position: center;
-      }
-      .footer-top-cell-2 {
-        @include span-columns(4);
-        @include omega();
-        .i-end {
-          align-items: center;
-        }
-      }
-      .footer-top-cell-3 {
-        @include span-columns(4);
-        @include omega();
-        .i-end {
-          align-items: center;
-        }
-      }
-      .footer-top-cell-4 {
-        @include span-columns(4);
-        @include omega();
-        .i-end {
-          align-items: center;
-        }
-      }
-     }
+
     .footer-top-cell-1,
     .footer-top-cell-2,
     .footer-top-cell-3,
     .footer-top-cell-4 {
-      //@include span-columns(3);
       height: $logo;
       margin-top: 1rem;
       margin-bottom: 1rem;
@@ -110,27 +35,57 @@
       }
     }
 
-    //.footer-contacts {
-      //display: inline-block;
-      //border: 1px dashed blue;
-    //}
     .footer-top-cell-1 {
-      @include span-columns(6 of 24);
       background: url('../img/logo/logo.png') left no-repeat;
+      @include span-columns(6 of 24);
+      @include media($pc){
+        @include span-columns(12);
+        @include omega();
+        background-position: center;
+        @include media($mc2-unbr) {
+          @include span-columns(10);
+          @include omega();
+          background-position: center;
+        }
+      }
     }
     .footer-top-cell-2 {
       @include span-columns(6 of 24);
+      @include media($pc){
+        @include omega-reset(1n);
+        @include span-columns(4);
+        .i-end {
+          align-items: flex-start;
+        }
+        @include media($mc2-unbr) {
+          @include span-columns(10);
+          @include omega();
+          .i-end {
+            align-items: center;
+          }
+        }
+      }
     }
     .footer-top-cell-3 {
-      @include span-columns(6 of 24);
       .footer-contacts {
         background: url('../img/icons/used/icon_time_bottom.png') left center no-repeat;
       }
+      @include span-columns(6 of 24);
+      @include media($pc) {
+        @include span-columns(4);
+        .i-end {
+          align-items: center;
+        }
+        @include media($mc2-unbr) {
+          @include span-columns(10);
+          @include omega();
+          .i-end {
+            align-items: center;
+          }
+        }
+      }
     }
     .footer-top-cell-4 {
-      @include span-columns(6 of 24);
-      @include omega();
-
       .footer-contacts {
         background: url('../img/icons/used/icon_phone_bottom.png') left center no-repeat;
         text-align: right;
@@ -143,6 +98,22 @@
           color: $aquamarine;
           font-size: 1rem;
           line-height: 1rem;
+        }
+      }
+      @include span-columns(6 of 24);
+      @include omega();
+      @include media($pc) {
+        @include span-columns(4);
+        @include omega();
+        .i-end {
+          align-items: flex-end;
+        }
+        @include media($mc2-unbr) {
+          @include span-columns(10);
+          @include omega();
+          .i-end {
+            align-items: center;
+          }
         }
       }
     }

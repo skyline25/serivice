@@ -489,28 +489,28 @@ $nth: 1;
       line-height: 1rem;
       padding-left: 3rem;
 
-      background: url('../img/icons/mini/icon_workstation-.png') 100% 100% no-repeat;
-      background-position: center;
-      background-position-x: 0.5rem;
+      background: url('../img/icons/mini/icon_workstation-.png') center left 0.5rem no-repeat;
+      //background-position: center;
+      //background-position-x: 0.5rem;
       &:hover {
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
       }
     }
     .cell-12 {
-      background: url('../img/icons/mini/icon_monoblock.png') center no-repeat;
-      background-position-x: 0.5rem;
+      background: url('../img/icons/mini/icon_monoblock.png') center left 0.5rem no-repeat;
+      //background-position-x: 0.5rem;
     }
     .cell-13 {
-      background: url('../img/icons/mini/icon_laptop-.png') center no-repeat;
-      background-position-x: 0.5rem;
+      background: url('../img/icons/mini/icon_laptop-.png') center left 0.5rem no-repeat;
+      //background-position-x: 0.5rem;
     }
     .cell-14 {
-      background: url('../img/icons/mini/icon_tablet-.png') center left no-repeat;
-      background-position-x: 0.75rem;//подгонка узких иконок
+      background: url('../img/icons/mini/icon_tablet-.png') center left 0.75rem no-repeat;
+      //background-position-x: 0.75rem;//подгонка узких иконок
     }
     .cell-15 {
-      background: url('../img/icons/mini/icon_ebook-.png') center left no-repeat;
-      background-position-x: 0.875rem;//подгонка узких иконок
+      background: url('../img/icons/mini/icon_ebook-.png') center left 0.875rem no-repeat;
+      //background-position-x: 0.875rem;//подгонка узких иконок
       margin-bottom: 0.5rem;
 
     }
@@ -539,32 +539,32 @@ $nth: 1;
       line-height: 1rem;
       padding-left: 3rem;
 
-      background: url('../img/icons/mini/icon_apple-monitor-.png') 100% 100% no-repeat;
-      background-position: center;
-      background-position-x: 0.5rem;
+      background: url('../img/icons/mini/icon_apple-monitor-.png') center left 0.5rem no-repeat;
+      //background-position: center;
+      //background-position-x: 0.5rem;
       &:hover {
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
       }
     }
     .cell-18 {
-      background: url('../img/icons/mini/icon_cellphone-.png') 100% 100% no-repeat;
-      background-position: center;
-      background-position-x: 0.875rem;//подгонка узких иконок
+      background: url('../img/icons/mini/icon_cellphone-.png') center left 0.875rem no-repeat;
+      //background-position: center;
+      //background-position-x: 0.875rem;//подгонка узких иконок
     }
     .cell-19 {
-      background: url('../img/icons/mini/icon_monitor.png') 100% 100% no-repeat;
-      background-position: center;
-      background-position-x: 0.5rem;
+      background: url('../img/icons/mini/icon_monitor.png') center left 0.5rem no-repeat;
+      //background-position: center;
+      //background-position-x: 0.5rem;
     }
     .cell-20 {
-      background: url('../img/icons/mini/1.png') 100% 100% no-repeat;
-      background-position: center;
-      background-position-x: 0.5rem;//подгонка узких иконок
+      background: url('../img/icons/mini/1.png') center left 0.5rem no-repeat;
+      //background-position: center;
+      //background-position-x: 0.5rem;//подгонка узких иконок
     }
     .cell-21 {
-      background: url('../img/icons/mini/icon_building-.png') 100% 100% no-repeat;
-      background-position: center;
-      background-position-x: 0.5rem;//подгонка узких иконок
+      background: url('../img/icons/mini/icon_building-.png') center left 0.5rem no-repeat;
+      //background-position: center;
+      //background-position-x: 0.5rem;//подгонка узких иконок
     }
   }
   .mc3-block-4 {

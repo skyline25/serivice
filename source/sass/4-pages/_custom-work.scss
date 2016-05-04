@@ -121,7 +121,14 @@
       @for $i from 1 through 14 {
         .c-work-box-type-2-cell-center-#{$i} {
           background: url('../img/images/c-work/box-type-2/#{$i}.png') left center no-repeat;
+          @if $i == 10 {
+            background: url('../img/images/c-work/box-type-2/#{$i}.png') left 0.5rem center no-repeat;
+          }
+          @else if $i == 14 {
+            background: url('../img/images/c-work/box-type-2/#{$i}.png') left 0.5rem center no-repeat;
+          }
         }
+
       }
       @include media($pc) {
         @include span-columns(4 of 8);

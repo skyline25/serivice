@@ -113,6 +113,14 @@ body {
     margin-bottom: 0.75rem;
   }
 }
+.active_page{
+  background-color: white;
+  &:hover {
+    background-color: rgb(139, 191, 228);
+  }
+}
+
+
 
 .text-justify,//замениить на .justify
 .justify {

@@ -101,13 +101,11 @@
   color: $text;
   font-weight: $normal;
   transition: all 0.3s ease;
+
   &:hover {
     background: $whitesmoke;
+    font-weight: $bold;
   }
-  .price-link {
-    display: block;
-  }
-
 }
 .s-normalizer {
   //padding-left: 1rem;

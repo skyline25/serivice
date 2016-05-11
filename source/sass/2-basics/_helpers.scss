@@ -198,8 +198,21 @@ body {
 .container-custom-service-breadcrumbs {
   margin-top: 0.5rem;
 }
-
-
+.phone-animation {
+  animation-name: stretching;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+}
+@keyframes stretching {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
 
 .margin-t1 {
   margin-top: 1rem;
@@ -255,3 +268,5 @@ body {
 .t2 {
   border: 1px dashed blue;
 }
+
+

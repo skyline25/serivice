@@ -16,7 +16,110 @@ $nth: 1;
   &:nth-child(#{$nth}+1) { clear: none; }
 }
 
-.h-box-out {
+.header-all {
+  font-size: 0;
+  min-width: $uncompressed;
+  .header-top-side {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 102;
+    background-color: $gray-header-bg;
+    min-height: 2rem;
+    span {
+      font-size: 1rem;
+      font-weight: $normal;
+      color: $text;
+      white-space: nowrap;
+    }
+    .header-button-mob {
+      display: none;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      .header-menu-button-block {
+        margin-right: 1rem;
+        //padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        height: 1rem;
+        .header-menu-button-line {
+          width: 1.5rem;
+          height: 0.125rem;
+          background: $gray-copyright;
+        }
+      }
+    }
+    .header-menu-list{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .header-button {
+      //position: absolute;
+      display: inline-block;
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      transition: all $fast ease;
+      &:hover {
+        background-color: $blue-hover;
+      }
+      .h-button-normalizer {
+        min-height: 2rem;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .h-menu-c {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      @include media($tablet-h) {
+        .header-menu-list {
+          display: none;
+        }
+        .header-button-mob {
+          display: inline-block;
+          background-color: white;
+        }
+        &:hover {
+          flex-direction: column;
+          .header-button-mob {
+            display: inline-block;
+            background-color: $blue-hover;
+          }
+          .header-menu-list {
+            position: absolute;
+            right: 0;
+            left: 0;
+            //@include span-columns(10 of 10);
+            //@include omega();
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            .header-button {
+              padding-left: 4rem;
+              background: $whitesmoke;
+              border-bottom: 1px solid $gray-header-bg;
+              &:last-child {
+                border-bottom: none;
+              }
+              &:hover {
+                background-color: $blue-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //Рабочая версия ниже
+  /*
+  .h-box-out {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,12 +145,12 @@ $nth: 1;
     }
   }
   //Размещен ниже
-  /*&:hover {
+  &:hover {
     .header-button {
       display: inline-block;
       z-index: 103;
     }
-  }*/
+  }
 }
 .header-button-m {
   @include media($tablet-h) {
@@ -63,9 +166,6 @@ $nth: 1;
   }
 }
 
-.header-all {
-  color: $text;
-  min-width: $uncompressed;
   .header-top-side {
     position: fixed;
     top: 0;
@@ -139,7 +239,7 @@ $nth: 1;
       }
 
     }
-  }
+  }*/
 
   .header-bottom-side {
     min-width: $uncompressed;

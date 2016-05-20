@@ -28,7 +28,6 @@
 }
 
 .container-custom-service-1 {
-  padding-bottom: 2rem;
   margin-top: 1rem;
   .cell-custom-service-1 {
     @include span-columns(3);
@@ -45,6 +44,7 @@
   .cell-custom-service-2 {
     @include span-columns(9);
     @include omega();
+    padding-bottom: 2rem;
     margin-top: 2rem;
     .block-h {
       margin-bottom: 1rem;
@@ -62,7 +62,6 @@
 
 .container-custom-service-2 {
   .cell-custom-service-3 {
-    @include span-columns(6);
     margin-bottom: 2rem;
     padding: 1rem 1.5rem;
     .service-table {
@@ -84,9 +83,13 @@
         line-height: 1.125rem;
       }
     }
+    @include span-columns(6);
     @include media($pc) {
       @include span-columns(12 of 12);
       @include omega();
+      @include media($mobile) {
+
+      }
     }
   }
   .cell-custom-service-4 {
@@ -96,6 +99,11 @@
     @include media($pc) {
       @include span-columns(12 of 12);
       @include omega();
+      @include media($tablet-s) {
+        .img-operator {
+          display: none;
+        }
+      }
     }
   }
   .cell-custom-service-5 {

@@ -1,3 +1,4 @@
+$tablet: new-breakpoint(max-width 768px 10);
 $nth: 1;
 @mixin omega-reset($nth, $context: null) {
   @if $context == null {
@@ -182,11 +183,14 @@ body {
   }
 }
 
+
 .container {
   @include outer-container();
   padding: 0 2rem;
   font-size: 0;
-
+  @include media($tablet) {
+    padding: 0 0.5rem;
+  }
   //min-width: $uncompressed;
 }
 
@@ -198,6 +202,7 @@ body {
   background: $white;
   min-width: $uncompressed;
 }
+
 .container-custom-service-breadcrumbs {
   margin-top: 0.5rem;
 }

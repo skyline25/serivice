@@ -20,7 +20,9 @@
 .warranty-container {
   @include outer-container();
   padding: 1rem 2rem 0 2rem;
-
+  @include media($tablet) {
+    padding: 1rem 0.5rem 0 0.5rem;
+  }
   .warranty-h-cell {
     @include span-columns(12);
     @include omega();

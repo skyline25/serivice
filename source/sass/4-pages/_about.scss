@@ -9,14 +9,16 @@
   @include span-columns(4 of 12);
   @include omega();
   @include media($header-unbreakable){
-    @include shift(4);
-    @include span-columns(4 of 12);
+    //@include shift(4);
+    @include span-columns(12 of 12);
     @include omega();
   }
-
-  .img-about-vechicle {
+  background: url('../img/images/img-about-vechicle.png') center no-repeat;
+  background-size: contain;
+  height: 17rem;
+  /*.img-about-vechicle {
     max-height: 17rem;
-  }
+  }*/
 }
 .cell-about-3 {
   @include span-columns(12);
@@ -100,6 +102,9 @@
   @include media($header-unbreakable){
     @include span-columns(12 of 12);
     @include omega();
+    @include media($tablet) {
+      padding: 1rem;
+    }
   }
   margin-top: 2rem;
   //margin-bottom: 2rem;

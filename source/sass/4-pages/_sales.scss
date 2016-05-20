@@ -9,30 +9,15 @@
 .sales-container {
   @include outer-container();
   padding: 0 2rem;
-
-  @include media($pc) {
-    .sale-cell-1 {
-      @include span-columns(12);
-      @include omega();
-    }
-    .sale-cell-2 {
-      @include  span-columns(12);
-      @include omega();
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-  }
-  @include media($header-unbreakable) {
-    .sale-cell-3 {
-      @include span-columns(12);
-      @include omega();
-    }
-  }
   @include media($tablet) {
     padding: 0 0.5rem;
   }
   .sale-cell-1 {
     @include span-columns(6);
+    @include media($pc) {
+      @include span-columns(12);
+      @include omega();
+    }
     .text-h-sale {
       margin-bottom: 1rem;
     }
@@ -44,6 +29,17 @@
   .sale-cell-2 {
     @include span-columns(6);
     @include omega();
+    @include media($pc) {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      @include  span-columns(12);
+      @include omega();
+      @include media($tablet-s) {
+        .img-operator {
+          display: none;
+        }
+      }
+    }
     margin-top: 1rem;
     padding: 1rem;
     background: $white;
@@ -56,17 +52,11 @@
       padding-right: 13rem;
       background: url('../img/icons/img_operator.png') center right no-repeat;
     }
-    /*.justify {
-      padding: 0 1.5rem 0 0.5rem;
-    }*/
   }
   .sale-cell-3 {
-    @include span-columns(6);
-    @include omega(2n);
     margin-bottom: 1rem;
     padding: 1rem 2rem;
     background: $white;
-
     .s-cell-3-normalize {
       background: url('../img/icons/technical-sale.png') center left no-repeat;
       padding-left: 10rem;
@@ -82,6 +72,19 @@
       height: 5rem;
       overflow: hidden;
       text-overflow: clip;
+    }
+    @include span-columns(6);
+    @include omega(2n);
+    @include media($header-unbreakable) {
+      @include span-columns(12);
+      @include omega();
+      @include media($tablet-s) {
+        padding: 1rem;
+        .s-cell-3-normalize {
+          background: none;
+          padding-left: 0;
+        }
+      }
     }
   }
 }

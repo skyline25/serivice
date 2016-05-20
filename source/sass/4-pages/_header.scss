@@ -37,6 +37,9 @@ $nth: 1;
     align-items: flex-start;
     left: 0;
     right: 0;
+    .active_page {
+      order: -1;
+    }
   }
   //Размещен ниже
   /*&:hover {
@@ -121,10 +124,10 @@ $nth: 1;
           background: $white;
           &:first-child {
             display: inline-block;
-            border: none;
+            //border: none;
           }
           &:last-child {
-            border: none;
+            //border: none;
           }
         }
       }
@@ -134,6 +137,7 @@ $nth: 1;
           z-index: 103;
         }
       }
+
     }
   }
 

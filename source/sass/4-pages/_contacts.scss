@@ -34,6 +34,9 @@
       @include size(100% 4rem);
       margin-bottom: 0;
     }
+    &-un {
+      min-width: 8rem;
+    }
   }
   .block-h1 {
     padding-top: 1rem;

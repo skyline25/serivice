@@ -238,6 +238,11 @@
 .c-work-block-6 {
   @include span-columns(6);
   @include omega();
+  @include media($tablet-s) {
+    .img-operator {
+      display: none;
+    }
+  }
   margin-top: 1rem;
 
 }

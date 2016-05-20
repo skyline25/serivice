@@ -1,8 +1,10 @@
 $pc: new-breakpoint(max-width 1280px 12);
 
 $header-unbreakable: new-breakpoint(max-width 1024px 12);
+$laptop: new-breakpoint(max-width 1024px 12);
 $mc2-unbr: new-breakpoint(max-width 832px 10);
 $tablet: new-breakpoint(max-width 768px 10);
+$tablet-s: new-breakpoint(max-width 568px 4);
 $footer-unbr: new-breakpoint(max-width 600px 4);
 $h-phone-unbreakable: new-breakpoint(max-width 512px 4);
 $mobile: new-breakpoint(max-width 480px 4);
@@ -28,20 +30,20 @@ $nth: 1;
 
   @include outer-container();
 
-  @include media($header-unbreakable) {
+  /*@include media($header-unbreakable) {
     .main-container-1-cell {
       @include span-columns(4);
       @include omega-reset(4n);
       @include omega(3n);
     }
-  }
+  }*/
   @include media($tablet) {
     padding: 0 0.5rem;
-    .main-container-1-cell {
+    /*.main-container-1-cell {
       @include span-columns(5);
       @include omega-reset(3n);
       @include omega(2n);
-    }
+    }*/
     .main-carousel-promo {
       width: 10rem;
     }
@@ -60,6 +62,20 @@ $nth: 1;
   .main-container-1-cell {
     @include span-columns(3);
     @include omega(4n);
+    @include media($header-unbreakable) {
+      @include span-columns(4);
+      @include omega-reset(1n);
+      @include omega(3n);
+      @include media($tablet) {
+        @include span-columns(5);
+        @include omega-reset(1n);
+        @include omega(2n);
+        @include media($mobile) {
+          @include span-columns(4);
+          @include omega();
+        }
+      }
+    }
 
     height: 4rem;
     margin-bottom: 1rem;
@@ -68,7 +84,6 @@ $nth: 1;
     font-size: 1rem;
     line-height: 1rem;
     transition: all $fast ease;
-
     display: flex;
     align-items: center;
 
@@ -77,7 +92,8 @@ $nth: 1;
     }
 
     .main-top-text {
-      padding-left: 1rem;
+      //padding-left: 1rem;
+      padding: 0 1rem;
     }
 
     .justify-mc-1 {
@@ -92,7 +108,7 @@ $nth: 1;
     @for $i from 1 through 8 {
       .main-icon-#{$i} {
         height: 3rem;
-        width: 5rem;
+        min-width: 5rem;
         border-right: 1px solid white;
         background: url('../img/icons/mc-1/0#{$i}.png') center no-repeat;
       }
@@ -100,47 +116,52 @@ $nth: 1;
   }
   //Классы для имитации карусели начало
   .main-carousel {
-    @include span-columns(12);
-    @include omega();
-
-    //margin-top: 2rem;
     background-image: url('../img/images/1.jpg');
     background-size: cover;
     padding: 2rem 1.125rem;
-
-    //.start {
-      .main-carousel-promo {
-        width: 30rem;
-        //height: 14rem;
-        background-color: rgba(255, 255, 255, 0.9);
-        border: 1px solid white;
-        padding: 2rem;
-        margin-left: 2rem;
-        @include media($tablet) {
-            width: 18.5rem;
-            margin-left: 1.5rem;
-        }
+    @include span-columns(12);
+    @include omega();
+    @include media($tablet) {
+      padding: 1rem 0;
+    }
+    .main-carousel-promo {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid white;
+      padding: 2rem;
+      margin-left: 2rem;
+      @include span-columns(6);
+      @include media($tablet) {
+        @include span-columns(10);
+        margin-left: 0;
+        padding: 1.5rem;
         @include media($mobile) {
-          width: 15rem;
-          margin-left: 1rem;
-        }
-        .main-carousel-promo-1 {
-          font-size: 1.5rem;
-          font-weight: $bold;
-          line-height: 1.25rem;
-          margin-bottom: 1.625rem;
-        }
-        .main-carousel-promo-2 {
-          height: 3.375rem;
-          text-overflow: clip;
-          overflow: hidden;
-          font-size: 1rem;
-          font-weight: $normal;
-          line-height: 1.125rem;
-          margin-bottom: 1.625rem;
+          @include span-columns(4);
+          padding: 1rem;
+          margin-left: 0;
+          .button-about {
+            width: 8rem;
+          }
         }
       }
-    //}
+      .main-carousel-promo-1 {
+        font-size: 1.5rem;
+        font-weight: $bold;
+        line-height: 1.25rem;
+        margin-bottom: 1.625rem;
+        @include media($mobile) {
+          font-size: 1.25rem;
+        }
+      }
+      .main-carousel-promo-2 {
+        height: 3.375rem;
+        text-overflow: clip;
+        overflow: hidden;
+        font-size: 1rem;
+        font-weight: $normal;
+        line-height: 1.125rem;
+        margin-bottom: 1.625rem;
+      }
+    }
   }
   .main-carousel-bar {
     @include span-columns(12);
@@ -184,9 +205,9 @@ $nth: 1;
 
   .main-container-2 {
     @include outer-container();
-    padding: 2rem;
-    .mc2-block {
-      @include span-columns(4);
+    padding: 0 2rem;
+    @include media($tablet) {
+      padding: 0 0.5rem;
     }
     .mc2-block-1 {
       background-color: $white;
@@ -197,33 +218,45 @@ $nth: 1;
         width: 100%;
         padding: 0 2rem;
         display: block;
-        //height: 3rem;
       }
       .block-h1 {
-        line-height: 3rem;
+        //min-height: 3rem;
+        //display: flex;
+        //justify-content: space-between;
+        //align-items: center;
+        //line-height: 3rem;
         &-border {
-          border-bottom: 1px solid $gray-footer-bg;
+          border-bottom: 1px solid $whitesmoke;
+          min-height: 3rem;
+          width: 100%;
+          display: flex;
+          align-items: center;
         }
       }
       &-promo {
         transition: all $fast ease;
         font-size: 1rem;
-        line-height: 3rem;
+        //line-height: 3rem;
         color: $text;
 
         &-border {
-          border-bottom: 1px solid $gray-footer-bg;
+          min-height: 3rem;
+          border-bottom: 1px solid $whitesmoke;
           transition: all $fast ease;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          @include media($mc2-unbr) {
+          &-ub {
+            min-width: 5rem;
+            text-align: right;
+          }
+          /*@include media($mc2-unbr) {
             flex-wrap: wrap;
             > div {
               width: 100%;
               line-height: 2rem;
             }
-          }
+          }*/
         }
 
         &-price {
@@ -243,6 +276,7 @@ $nth: 1;
         padding-bottom: 1rem;
         display: flex;
         justify-content: center;
+        //align-items: center;
       }
     }
     .mc2-block-2 {
@@ -310,7 +344,7 @@ $nth: 1;
           margin-bottom: 1rem;
 
           .mc2-block-3-ava {
-            @include size(4rem 4rem);
+            @include size(4rem);
             background: url('../img/icons/avatar_boykodmitriy.png') center no-repeat;
             background-size: contain;
           }
@@ -335,6 +369,7 @@ $nth: 1;
       }
 
       &-2 {
+        margin-bottom: 2rem;
         padding: 0 2rem;
         background-color: $white;
         .block-h1 {
@@ -357,51 +392,25 @@ $nth: 1;
         }
       }
     }
-    @include media($pc) {
-      /*.mc2-block-1 {
-        @include span-columns(6);
-      }
-      .mc2-block-2 {
-        @include span-columns(6);
-        @include omega();
-      }
-      .mc2-block-3 {
-        margin-top: 2rem;
-        @include span-columns(12);
-        @include omega();
-        .mc2-block-3-1 {
-          margin-bottom: 0;
-        }
-      }*/
-      .mc2-block {
+    .mc2-block {
+      margin-top: 2rem;
+      @include span-columns(4);
+      @include media($pc) {
         @include span-columns(6 of 12);
         @include omega(2n);
         &:last-child {
-          margin-top: 2rem;
+          //margin-top: 2rem;
           @include span-columns(12 of 12);
           @include omega();
           .mc2-block-3-1 {
             margin-bottom: 2rem;
           }
         }
-      }
-
-    }
-    @include media($mc2-unbr) {
-      .mc2-block {
-        @include span-columns(10 of 10); //не работает!!!
-        @include omega();
-        //margin-bottom: 1rem;
-        &:last-child {
-          .mc2-block-3-1 {
-            margin-bottom: 2rem;
-          }
-          margin-bottom: 0;
+        @include media($tablet) {
+          @include span-columns(10 of 10);
+          @include omega();
         }
       }
-    }
-    @include media($tablet) {
-      padding: 2rem 0.5rem;
     }
   }
 }
@@ -414,30 +423,11 @@ $nth: 1;
   //padding-bottom: 2rem;
   padding: 1rem 2rem 2rem 2rem;
 
-  @include media($header-unbreakable) {
-    .mc3-block-1 {
-      @include span-columns(12);
-      @include omega();
-    }
-    .mc3-block-2 {
-      @include span-columns(6);
-      @include omega-reset(2n);
-
-    }
-    .mc3-block-3 {
-      @include span-columns(6);
-      @include omega();
-      /*.cell-21 {
-        line-height: 1rem;
-      }*/
-    }
-  }
   @include media($tablet) {
     padding: 1rem 0.5rem 2rem 0.5rem;
   }
 
   .mc3-block-1 {
-    @include span-columns(6);
     padding-bottom: 1.5rem;
     .block-h1 {
       padding-bottom: 1rem;
@@ -466,10 +456,41 @@ $nth: 1;
         line-height: 1rem;
       }
     }
+    @include span-columns(6);
+    @include media($header-unbreakable) {
+      @include span-columns(12);
+      @include omega();
+    }
   }
+
   .mc3-block-2 {
-    display: table;
-    @include span-columns(3);
+    @include span-columns(6);
+    @include omega();
+    @include media($laptop) {
+      @include span-columns(12);
+      @include omega();
+    }
+    .mc3-block-2-1 {
+      @include span-columns(3 of 6);
+      @include media($laptop) {
+        @include span-columns(6 of 12);
+        @include media($mobile) {
+          @include span-columns(4);
+        }
+      }
+    }
+    .mc3-block-2-2 {
+      @include span-columns(3 of 6);
+      @include omega();
+      @include media($laptop) {
+        @include span-columns(6 of 12);
+        @include omega();
+        @include media($mobile) {
+          @include span-columns(4);
+          @include omega();
+        }
+      }
+    }
     padding-bottom: 1.5rem;
     .text-h1 {
       line-height: 2rem;
@@ -480,7 +501,12 @@ $nth: 1;
     .cell-12,
     .cell-13,
     .cell-14,
-    .cell-15 {
+    .cell-15,
+    .cell-17,
+    .cell-18,
+    .cell-19,
+    .cell-20,
+    .cell-21{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -488,93 +514,52 @@ $nth: 1;
       height: 3rem;
       line-height: 1rem;
       padding-left: 3rem;
-
       background: url('../img/icons/mini/icon_workstation-.png') center left 0.5rem no-repeat;
-      //background-position: center;
-      //background-position-x: 0.5rem;
       &:hover {
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
       }
     }
     .cell-12 {
       background: url('../img/icons/mini/icon_monoblock.png') center left 0.5rem no-repeat;
-      //background-position-x: 0.5rem;
     }
     .cell-13 {
       background: url('../img/icons/mini/icon_laptop-.png') center left 0.5rem no-repeat;
-      //background-position-x: 0.5rem;
     }
     .cell-14 {
       background: url('../img/icons/mini/icon_tablet-.png') center left 0.75rem no-repeat;
-      //background-position-x: 0.75rem;//подгонка узких иконок
     }
     .cell-15 {
       background: url('../img/icons/mini/icon_ebook-.png') center left 0.875rem no-repeat;
-      //background-position-x: 0.875rem;//подгонка узких иконок
-      margin-bottom: 0.5rem;
-
+    }
+    .cell-17 {
+      background: url('../img/icons/mini/icon_apple-monitor-.png') center left 0.5rem no-repeat;
+    }
+    .cell-18 {
+      background: url('../img/icons/mini/icon_cellphone-.png') center left 0.875rem no-repeat;
+    }
+    .cell-19 {
+      background: url('../img/icons/mini/icon_monitor.png') center left 0.5rem no-repeat;
+    }
+    .cell-20 {
+      background: url('../img/icons/mini/1.png') center left 0.5rem no-repeat;
+    }
+    .cell-21 {
+      background: url('../img/icons/mini/icon_building-.png') center left 0.5rem no-repeat;
+      margin-bottom: 1rem;
     }
     .cell-16 {
-      //padding-top: 1rem;
       .cross-link-blue {
         line-height: 1rem;
       }
     }
   }
-  .mc3-block-3 {
-    @include span-columns(3);
-    @include omega();
 
-    padding-top: 2.5rem;
-    .cell-17,
-    .cell-18,
-    .cell-19,
-    .cell-20,
-    .cell-21 {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      height: 3rem;
-      line-height: 1rem;
-      padding-left: 3rem;
-
-      background: url('../img/icons/mini/icon_apple-monitor-.png') center left 0.5rem no-repeat;
-      //background-position: center;
-      //background-position-x: 0.5rem;
-      &:hover {
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-      }
-    }
-    .cell-18 {
-      background: url('../img/icons/mini/icon_cellphone-.png') center left 0.875rem no-repeat;
-      //background-position: center;
-      //background-position-x: 0.875rem;//подгонка узких иконок
-    }
-    .cell-19 {
-      background: url('../img/icons/mini/icon_monitor.png') center left 0.5rem no-repeat;
-      //background-position: center;
-      //background-position-x: 0.5rem;
-    }
-    .cell-20 {
-      background: url('../img/icons/mini/1.png') center left 0.5rem no-repeat;
-      //background-position: center;
-      //background-position-x: 0.5rem;//подгонка узких иконок
-    }
-    .cell-21 {
-      background: url('../img/icons/mini/icon_building-.png') center left 0.5rem no-repeat;
-      //background-position: center;
-      //background-position-x: 0.5rem;//подгонка узких иконок
-    }
-  }
   .mc3-block-4 {
     @include span-columns(12);
     @include omega();
-    //height: 9rem;//временное значение
     padding: 1rem 2rem;
     .block-h1 {
       line-height: 2rem;
     }
-
   }
 }

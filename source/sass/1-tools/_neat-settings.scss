@@ -8,6 +8,7 @@ $mobile: new-breakpoint(max-width 512px 4);
 $pc: new-breakpoint(max-width 1280px 12);
 $header-unbreakable: new-breakpoint(max-width 1024px 12);
 $mc2-unbr: new-breakpoint(max-width 832px 10);
+$tablet-h: new-breakpoint(max-width 780px 10);
 $tablet: new-breakpoint(max-width 768px 10);
 $footer-unbr: new-breakpoint(max-width 600px 4);
 $h-phone-unbreakable: new-breakpoint(max-width 512px 4);

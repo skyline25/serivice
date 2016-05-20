@@ -122,10 +122,10 @@
       background-color: $white;
     }
     .footer-bottom-cell {
-      height: 2rem;
+      min-height: 2rem;
       font-size: 0.75rem;
       font-weight: $lite;
-      line-height: 2rem;
+      //line-height: 2rem;
       color: $gray-copyright; //color: #6a6a6a;
     }
   }

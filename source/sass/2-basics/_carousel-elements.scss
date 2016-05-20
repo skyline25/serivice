@@ -1,8 +1,9 @@
 .carousel-arrow {
   display: inline-block;
-  width: 3rem;
-  height: 3rem;
+  @include size(3rem);
+  min-width: 3rem;
   background: url('../img/icons/icon_arrows.png') center no-repeat;
+  //background-size: contain;
   &:last-child {
     background: url('../img/icons/icon_arrows-right.png') center no-repeat;
   }

@@ -37,3 +37,8 @@
   background: url('../img/icons/used/icon_vk-.png') center no-repeat;
 }
 
+.social-link-m {
+  @include size(2rem);
+  background: url('../img/icons/used/icon_vk-.png') center no-repeat;
+  z-index: 104;
+}

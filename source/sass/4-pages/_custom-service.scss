@@ -1,61 +1,38 @@
-//вынесено в helpers.scss
-
-/*.container {
-  @include outer-container();
-  padding: 0 2rem;
-  font-size: 0;
-  min-width: $uncompressed;
-}
-
-.whitesmoke-bg {
-  background: $whitesmoke;
-}
-.white-bg {
-  background: $white;
-}
-.container-custom-service-breadcrumbs {
-  margin-top: 0.5rem;
-}
-*/
-//.img-contact-cell - вынесен ов helpers.scss
-
-.img-custom-service {
-  @include size(100%);
-  max-height: 11rem;
-}
 .img-user {
   max-height: 4rem;
 }
 
 .container-custom-service-1 {
   margin-top: 1rem;
-  .cell-custom-service-1 {
-    @include span-columns(3);
-    margin-top: 2rem;
-    @include media($tablet) {
-      @include span-columns(4 of 10);
-    }
-    @include media($footer-unbr) {
-      @include span-columns(4 of 4);
-      @include omega();
-    }
-    //margin-bottom: 2rem;
-  }
   .cell-custom-service-2 {
-    @include span-columns(9);
-    @include omega();
     padding-bottom: 2rem;
     margin-top: 2rem;
     .block-h {
       margin-bottom: 1rem;
+      @include shift(3 of 12);
+      @include media($header-unbreakable) {
+        @include shift(4);
+        @include media($tablet) {
+          @include shift(0);
+        }
+      }
     }
-    @include media($tablet) {
-      @include span-columns(6 of 10);
+    .block-s-image {
+      height: 11rem;
+      float: left;
+      background: url('../img/icons/custom-service-01.png') center no-repeat;
+      background-size: contain;
+      @include span-columns(3);
+      @include media($header-unbreakable) {
+        @include span-columns(4);
+        @include media($tablet) {
+          @include span-columns(10);
+          @include omega();
+        }
+      }
     }
-    @include media($footer-unbr) {
-      @include span-columns(4 of 4);
-      @include omega();
-    }
+    @include span-columns(12);
+    @include omega();
   }
 }
 
@@ -74,6 +51,20 @@
           padding-top: 0;
           padding-bottom: 0.875rem;
         }
+        .b-line {
+          display: inline;
+        }
+        .b-block {
+          display: none;
+        }
+        @include media($mobile) {
+          .b-line {
+            display: none;
+          }
+          .b-block {
+            display: inline;
+          }
+        }
       }
     }
     .service-info {
@@ -88,7 +79,16 @@
       @include span-columns(12 of 12);
       @include omega();
       @include media($mobile) {
-
+        padding: 1rem;
+        .block-h1 {
+          font-size: 1rem;
+        }
+        .text-block-16 {
+          font-size: 0.875rem;
+        }
+        .padding-l2 {
+          padding-left: 1rem;
+        }
       }
     }
   }

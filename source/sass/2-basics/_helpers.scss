@@ -124,7 +124,14 @@ body {
 .pass-page {
 
 }
-
+.s-link {
+  font-weight: $bold;
+  color: $blue;
+  &:hover {
+    text-decoration: underline;
+    color: $blue-hover;
+  }
+}
 
 .text-justify,//замениить на .justify
 .justify {

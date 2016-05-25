@@ -138,6 +138,23 @@
   }
   .c-work-box-type-2 {
     margin-bottom: 2rem;
+    &-img {
+      min-height: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      //margin-bottom: 0.5rem;
+      //margin-right: 1rem;
+      margin: 0 1rem 0.5rem 0;
+      min-width: 4rem;
+      border-right: 1px solid $whitesmoke;
+    }
+    .cross-link {
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $text;
+      font-weight: $normal;
+    }
     &-cell {
       @include span-columns(4 of 12);
       @include omega(3n);

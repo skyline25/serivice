@@ -223,17 +223,17 @@
   color: $text;
   font-size: 0.875rem;
   line-height: 1.125rem;
-  margin-bottom: 1rem;
+  //margin-bottom: 1rem;
 }
-.c-work-text-block-1 {
+.c-work-text-block-21 {
   @include span-columns(6);
   @include media($tablet) {
     @include span-columns(10);
     @include omega();
-    margin-bottom: 0;
   }
 }
-.c-work-text-block-2 {
+.c-work-text-block-22 {
+  margin-bottom: 1rem;
   @include span-columns(6);
   @include omega();
   @include media($tablet) {
@@ -241,6 +241,31 @@
     @include omega();
   }
 }
+.c-work-text-block-31 {
+  @include span-columns(4);
+  @include media($tablet) {
+    @include span-columns(10);
+    @include omega();
+  }
+}
+.c-work-text-block-32 {
+  @include span-columns(4);
+  @include media($tablet) {
+    @include span-columns(10);
+    @include omega();
+  }
+}
+.c-work-text-block-33 {
+  margin-bottom: 1rem;
+  @include span-columns(4);
+  @include omega();
+  @include media($tablet) {
+    @include span-columns(10);
+    @include omega();
+  }
+}
+
+
 
 .c-work-block-5 {
   @include span-columns(6);

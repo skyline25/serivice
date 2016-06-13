@@ -27,11 +27,20 @@ $nth: 1;
     background-color: $gray-header-bg;
     min-height: 2rem;
     span {
+      //display: inline-block;
       font-size: 1rem;
       font-weight: $normal;
       color: $text;
       white-space: nowrap;
     }
+    .h-menu {
+      //display: inline-block;
+      font-size: 1rem;
+      font-weight: $normal;
+      color: $text;
+      white-space: nowrap;
+    }
+
     .header-button-mob {
       display: none;
       cursor: pointer;
@@ -59,7 +68,7 @@ $nth: 1;
     .header-button {
       //position: absolute;
       display: inline-block;
-      width: 100%;
+      //width: 100%;
       padding-left: 1rem;
       padding-right: 1rem;
       transition: all $fast ease;
@@ -67,8 +76,9 @@ $nth: 1;
         background-color: $blue-hover;
       }
       .h-button-normalizer {
-        min-height: 2rem;
+        height: 2rem;
         display: flex;
+        //flex-direction: inherit;
         align-items: center;
       }
     }
@@ -101,6 +111,7 @@ $nth: 1;
             flex-direction: column;
             align-items: flex-start;
             .header-button {
+              width: 100%;
               padding-left: 4rem;
               background: $whitesmoke;
               border-bottom: 1px solid $gray-header-bg;

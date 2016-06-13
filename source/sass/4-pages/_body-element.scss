@@ -227,7 +227,7 @@ $nth: 1;
         //line-height: 3rem;
         &-border {
           border-bottom: 1px solid $whitesmoke;
-          min-height: 3rem;
+          height: 3rem;
           width: 100%;
           display: flex;
           align-items: center;
@@ -236,11 +236,13 @@ $nth: 1;
       &-promo {
         transition: all $fast ease;
         font-size: 1rem;
+        //box-sizing: border-box;
         //line-height: 3rem;
         color: $text;
 
         &-border {
-          min-height: 3rem;
+          box-sizing: border-box;
+          height: 3rem;
           border-bottom: 1px solid $whitesmoke;
           transition: all $fast ease;
           display: flex;

@@ -85,7 +85,8 @@ h4 {
 //upd 14-06-16
 .h1,
 .h2,
-.h3 {
+.h3,
+.h4 {
   font-weight: $bold;
   text-transform: uppercase;
 }
@@ -98,4 +99,7 @@ h4 {
 }
 .h3 {
   font-size: 1rem;
+}
+.h4 {
+  font-size: 0.875rem;
 }

@@ -72,8 +72,10 @@ $nth: 1;
       padding-left: 1rem;
       padding-right: 1rem;
       transition: all $fast ease;
+      color: $text;
       &:hover {
         background-color: $blue-hover;
+        color: $text;
       }
       .h-button-normalizer {
         height: 2rem;
@@ -300,6 +302,7 @@ $nth: 1;
     .header-infocell {
       height: $logo;
       line-height: 1.5rem;
+      //color: $text;
       .h-logo {
         @include size(17rem 3.125rem);
         background: url('../img/logo/logo.png') center no-repeat;

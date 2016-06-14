@@ -107,7 +107,7 @@ body {
     padding-left: 0.5rem;
   }
   .img-operator {
-    max-height: 11rem;
+    height: 11rem;
     margin-left: 0.75rem;
   }
   .block-h1 {
@@ -277,8 +277,11 @@ body {
 .white-bg {
   background: $white;
 }
-.test-block {
-  display: block;
+
+//костыль для IE
+.ie-font-norm {
+  font-weight: 300;
+  font-size: 0.85rem;
 }
 
 //временная функция для просмотра разметки
@@ -289,8 +292,6 @@ body {
 .t2 {
   border: 1px dashed blue;
 }
-.ie-font-norm {
-  font-weight: 300;
-  font-size: 0.85rem;
+.test-block {
+  display: block;
 }
-

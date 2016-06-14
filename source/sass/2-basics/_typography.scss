@@ -81,3 +81,21 @@ h4 {
     text-decoration: underline;
   }
 }
+
+//upd 14-06-16
+.h1,
+.h2,
+.h3 {
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+
+.h1 {
+  font-size: 1.75rem;
+}
+.h2 {
+  font-size: 1.125rem;
+}
+.h3 {
+  font-size: 1rem;
+}

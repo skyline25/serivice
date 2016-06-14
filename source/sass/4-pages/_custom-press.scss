@@ -55,6 +55,19 @@
   margin: 0.5rem 0 1rem 0.5rem;
 }
 .c-press-block-2 {
+  background: $white;
+  padding: 2rem 2rem 1rem 2rem;
+  .text-block-16 {
+    line-height: 1.5rem;
+  }
+  .h3 {
+      text-transform: none;
+  }
+  p,
+  ul,
+  ol {
+    font-size: 1rem;
+  }
   @include span-columns(8);
   @include omega();
   @include media($pc) {
@@ -67,11 +80,4 @@
       align-items: center;
     }
   }
-
-  background: $white;
-  padding: 2rem 2rem 1rem 2rem;
-  .text-block-16 {
-    line-height: 1.5rem;
-  }
-
 }

@@ -97,6 +97,7 @@
       display: block;
       padding: 0 1.5rem;
       transition: all 0.3s ease;
+      color: $text;
       &-center {
         padding-left: 2.5rem;
         height: 3rem;
@@ -117,6 +118,7 @@
     }
     .c-work-box-type-1-cell:hover {
       background: $whitesmoke;
+      color: $text;
     }
   }
   @include span-columns(3);

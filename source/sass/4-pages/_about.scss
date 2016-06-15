@@ -1,4 +1,5 @@
-.cell-about-1 {
+//Рабочая версия
+/*.cell-about-1 {
   @include span-columns(8 of 12);
   @include media($header-unbreakable){
     @include span-columns(12 of 12);
@@ -6,20 +7,51 @@
   }
 }
 .cell-about-2 {
-  @include span-columns(4 of 12);
-  @include omega();
-  @include media($header-unbreakable){
-    //@include shift(4);
+ @include span-columns(4 of 12);
+ @include omega();
+ @include media($header-unbreakable){
+   @include span-columns(12 of 12);
+   @include omega();
+ }
+ background: url('../img/images/img-about-vechicle.png') center no-repeat;
+ background-size: contain;
+ height: 17rem;
+//.img-about-vechicle {
+    //max-height: 17rem;
+  //}
+}*/
+.cell-about-1 {
+  .img-about-vechicle {
+    float: right;
+    margin-left: 1rem;
+  }
+  .brand-text-c1 {
+    @include span-columns(6 of 12);
+    @include media($tablet) {
+      @include span-columns(4 of 4);
+      @include omega();
+    }
+  }
+  .brand-text-c2 {
+    @include span-columns(6 of 12);
+    @include omega();
+  }
+  .brand-text-c3 {
     @include span-columns(12 of 12);
     @include omega();
   }
-  background: url('../img/images/img-about-vechicle.png') center no-repeat;
-  background-size: contain;
-  height: 17rem;
-  /*.img-about-vechicle {
-    max-height: 17rem;
-  }*/
+
+  @include span-columns(12);
+  @include omega();
+  @include media($tablet-s) {
+    .img-about-vechicle {
+      display: none;
+    }
+  }
+
 }
+
+
 .cell-about-3 {
   @include span-columns(12);
   @include omega();

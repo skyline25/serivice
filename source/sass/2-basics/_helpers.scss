@@ -284,6 +284,11 @@ body {
   font-weight: 300;
   font-size: 0.85rem;
 }
+//две колонки
+.cc-2 {
+  column-count: 2;
+}
+
 
 //временная функция для просмотра разметки
 .t {
@@ -292,6 +297,9 @@ body {
 }
 .t2 {
   border: 1px dashed blue;
+}
+.t3 {
+  border: 1px dashed red;
 }
 .test-block {
   display: block;

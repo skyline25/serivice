@@ -173,6 +173,8 @@ body {
 .wrap {
   flex-wrap: wrap;
 }
+
+
 .full {
   @include size(100%);
 }

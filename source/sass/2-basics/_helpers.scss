@@ -118,7 +118,7 @@ body {
 .active_page{
   background-color: white;
   &:hover {
-    background-color: rgb(139, 191, 228);
+    background-color: $blue-hover;
   }
 }
 .pass-page {
@@ -293,10 +293,14 @@ body {
 .cc-2 {
   column-count: 2;
 }
+.border-bottom-whc {
+  border-bottom: 1px solid $whitesmoke-c;
+}
 
 .f-left {
   float: left;
 }
+
 
 //временная функция для просмотра разметки
 .t {

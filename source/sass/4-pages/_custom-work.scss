@@ -187,6 +187,7 @@
       }
       &:hover {
         box-shadow: 0 0 7px rgba(0, 0, 0, 0.75);
+        cursor: pointer;
         .text-block-16 {
           text-decoration: underline;
           color: $text;

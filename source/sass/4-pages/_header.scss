@@ -19,6 +19,168 @@ $nth: 1;
 .header-all {
   font-size: 0;
   min-width: $uncompressed;
+  //Версия от 17-06-16 Начало
+
+  .triangle-all {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+    margin-left: 1rem;
+    .triangle-5 {
+      border: 0.5rem solid transparent; /* Прозрачные границы */
+      border-top: 0.5rem solid $text; /* Добавляем треугольник */
+    }
+  }
+  .h-top-bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 102;
+    background-color: $gray-header-bg;
+    font-size: 1rem;
+    font-weight: $normal;
+    color: $text;
+    white-space: nowrap;
+    //min-height: 2rem;
+    .h-button-mobile {
+      display: none; //Кнопка скрывается при $tablet-s
+      cursor: pointer;
+      position: relative; //v-menu
+      &-block {
+        //margin-right: 1rem;
+        //padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        height: 2rem;
+        padding: 0.5rem 1rem;
+        &-line {
+          width: 1.5rem;
+          height: 0.125rem;
+          background: $gray-copyright;
+        }
+      }
+      &-text {
+        margin-right: 1rem;
+        line-height: 1rem;
+        font-size: 1rem;
+        font-weight: $bold;
+        text-transform: uppercase;
+      }
+      &-normalizer {
+
+      }
+      .v-top-menu {
+        //экспирементальная функция
+        opacity: 0; /* По умолчанию скрываем подменю */
+        visibility: hidden;
+        transition: all 0.3s ease 0.3s; /* Добавляем анимацию 0.3 сек. и задержку в 1 сек. */
+        //
+        position: absolute;
+
+        background-color: $white;
+        z-index: 103;
+        box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+        font-size: 1rem;
+        color: $text;
+        .v-button {
+          display: block;
+          .h-button-normalizer {
+            padding: 0 2.5rem;
+            height: 3rem;
+            border-bottom: 1px solid $whitesmoke-c;
+          }
+          &:hover {
+            background-color: $blue-hover;
+            color: $text;
+            .h-button-normalizer {
+              border: none;
+            }
+          }
+        }
+        .h-service-menu {
+          top: 0;
+        }
+      }
+      &:hover {
+        .v-top-menu {
+          opacity: 1; /* Показываем подменю при ховере */
+          visibility: visible;
+          //border: 1px solid red;
+        }
+      }
+      @include media($tablet-h) {
+        display: block;
+        .v-top-menu {
+        }
+      }
+    }
+    .h-top-menu {
+      @include media($tablet-h) {
+        display: none;
+      }
+      //не заполненно
+    }
+    .s-button {
+      //transition: all 1s ease;
+      &:hover {
+        .h-service-menu {
+          //display: block;
+          opacity: 1; /* Показываем подменю при ховере */
+          visibility: visible;
+        }
+      }
+    }
+    .h-button {
+      position: relative;
+      display: inline-block;
+      //width: 100%;
+      //padding: 0 1rem;
+      transition: all $fast ease;
+
+      font-size: 1rem;
+      font-weight: $normal;
+      color: $text;
+      &:hover {
+        background-color: $blue-hover;
+        color: $text;
+      }
+    }
+
+    .h-service-menu {
+      //меню
+      //display: none;
+      //экспирементальная функция
+      opacity: 0; /* По умолчанию скрываем подменю */
+      visibility: hidden;
+      transition: all 0.3s ease 1s; /* Добавляем анимацию 0.3 сек. и задержку в 1 сек. */
+      //
+      position: absolute;
+      background-color: $white;
+      z-index: 103;
+      box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+      .h-service-button {
+        //z-index: 102;
+        //position: absolute;
+        display: block;
+        //padding: 0 1rem;
+        .h-button-normalizer {
+          height: 3rem;
+          border-bottom: 1px solid $whitesmoke-c;
+        }
+        &:hover {
+          background-color: $blue-hover;
+          .h-button-normalizer {
+            border-bottom: 1px solid $blue-hover;
+          }
+        }
+      }
+    }
+  }
+
+  //Версия от 17-06-16 Окончание
   .header-top-side {
     position: fixed;
     top: 0;
@@ -43,8 +205,11 @@ $nth: 1;
 
     .header-button-mob {
       display: none;
+
       cursor: pointer;
+      //padding: 0.5rem 1rem;
       padding: 0.5rem 1rem;
+
       .header-menu-button-block {
         margin-right: 1rem;
         //padding: 0.5rem 0;
@@ -61,30 +226,35 @@ $nth: 1;
       }
     }
     .header-menu-list{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      //display: flex;
+      //justify-content: flex-start;
+      //align-items: center;
+      //Рабочая версия
     }
     .header-button {
-      //position: absolute;
+      //position: relative;
       display: inline-block;
       //width: 100%;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      //padding: 0 1rem;
       transition: all $fast ease;
       color: $text;
       &:hover {
         background-color: $blue-hover;
         color: $text;
+        //border: 1px solid red;
+
       }
-      .h-button-normalizer {
+      //вынесено вверх
+      /*.h-button-normalizer {
+
         height: 2rem;
         display: flex;
-        //flex-direction: inherit;
         align-items: center;
-      }
+      }*/
     }
+    //
 
+//
     .h-menu-c {
       display: flex;
       justify-content: flex-start;
@@ -129,7 +299,24 @@ $nth: 1;
       }
     }
   }
+  .h-button-normalizer {
+    height: 2rem;
+    display: flex;
+    //flex-direction: inherit;
+    align-items: center;
+    //border-bottom: 1px solid $whitesmoke;
+    margin: 0 1rem;
+    color: $text;
+    justify-content: space-between;
+  }
 
+
+  /*.h-service-active {
+    display: none;
+    &:hover {
+
+    }
+  }*/
   //Рабочая версия ниже
   /*
   .h-box-out {

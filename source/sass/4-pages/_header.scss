@@ -22,7 +22,7 @@ $nth: 1;
   //Версия от 17-06-16 Начало
 
   .triangle-all {
-    height: 3rem;
+    height: 2rem;
     display: flex;
     align-items: center;
     padding-top: 0.5rem;
@@ -155,7 +155,7 @@ $nth: 1;
       //экспирементальная функция
       opacity: 0; /* По умолчанию скрываем подменю */
       visibility: hidden;
-      transition: all 0.3s ease 1s; /* Добавляем анимацию 0.3 сек. и задержку в 1 сек. */
+      transition: all 0.3s ease 0.5s; /* Добавляем анимацию 0.3 сек. и задержку в 1 сек. */
       //
       position: absolute;
       background-color: $white;

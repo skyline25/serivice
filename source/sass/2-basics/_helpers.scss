@@ -1,4 +1,5 @@
 $tablet: new-breakpoint(max-width 768px 10);
+$header-unbreakable: new-breakpoint(max-width 1024px 12);
 $nth: 1;
 @mixin omega-reset($nth, $context: null) {
   @if $context == null {
@@ -205,6 +206,14 @@ body {
   }
   //min-width: $uncompressed;
 }
+.container-60 {
+  @include outer-container(60);
+  padding: 0 2rem;
+  font-size: 0;
+  @include media($tablet) {
+    padding: 0 0.5rem;
+  }
+}
 
 .whitesmoke-bg {
   background: $whitesmoke;
@@ -300,7 +309,27 @@ body {
 .f-left {
   float: left;
 }
-
+.span-6-tablet-5 {
+  @include span-columns(6);
+  @include omega(2n);
+  @include media($tablet) {
+    @include span-columns(10);
+    //@include omega-reset(n);
+    @include omega();
+  }
+}
+.span-6-header-unbreakable-12 {
+  @include span-columns(6);
+  @include omega(2n);
+  @include media($header-unbreakable) {
+    @include span-columns(12);
+    //@include omega-reset(n);
+    @include omega();
+  }
+}
+.span-12 {
+  @include span-columns(12);
+}
 
 //временная функция для просмотра разметки
 .t {
@@ -315,4 +344,8 @@ body {
 }
 .test-block {
   display: block;
+}
+.text-align-center-block {
+  width: 100%;
+  text-align: center;
 }

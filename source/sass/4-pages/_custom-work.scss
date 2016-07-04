@@ -1,3 +1,4 @@
+$form-fixer: new-breakpoint(max-width 1212px 12);
 .c-work-block-2 {
   margin-bottom: 1rem;
   .block-h {
@@ -365,6 +366,7 @@
   &-normalizer {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    min-height: 17.875rem;
     .block-h1 {
       padding-left: 1rem;
       padding-right: 1rem;
@@ -400,6 +402,7 @@
     }
   }
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 @include media($header-unbreakable) {
@@ -430,6 +433,15 @@
     @include media($mobile) {
       @include span-columns(4);
       @include shift(0);
+    }
+  }
+}
+@include media($form-fixer) {
+  .c-work-block-5-normalizer {
+    //min-height: 17.875rem;
+    .block-h1 {
+      width: 75%;
+      //margin-bottom: 1.125rem;
     }
   }
 }

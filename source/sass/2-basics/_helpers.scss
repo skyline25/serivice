@@ -327,6 +327,15 @@ body {
     @include omega();
   }
 }
+.span-4-header-unbreakable-12 {
+  @include span-columns(4);
+  @include omega(3n);
+  @include media($header-unbreakable) {
+    @include span-columns(12);
+    //@include omega-reset(n);
+    @include omega();
+  }
+}
 .span-12 {
   @include span-columns(12);
 }
